@@ -1,0 +1,33 @@
+#title-2{
+    font-size: 35px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(4, 160, 4);
+    color: white;
+}
+
+#content_intro{
+    text-align:justify;
+}
+.content{
+    margin-bottom: 20px;
+    margin-left: 20px;
+    font-size: 22px;
+}
+h5 {
+    text-transform: uppercase;
+    font-weight:bold;
+    margin-left: 25px;
+}
+#img_intro{
+    margin-bottom: 20px;
+    margin-left: 22%;
+
+
+}
+
+
+
+
+
