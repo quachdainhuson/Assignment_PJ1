@@ -1,0 +1,82 @@
+#title-2{
+    font-size: 35px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(5, 5, 5);
+    color: white;
+}
+
+#customer-name,
+#customer-phone,
+#customer-mail,
+#customer-add{
+	padding: 15px;
+}
+
+.infocustomer h3{
+    font-weight: 1000;
+}
+
+.cart-nav-item {
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px;
+	border-bottom: 1px solid rgb(247, 247, 247);
+	font-weight: bold;
+}
+
+.my_order{
+   background-color: rgb(247, 247, 247);
+   border-radius: 5px;
+   margin-bottom: 5px;
+}
+.my_order #content{
+    text-align: center;
+    padding: 5px;
+    font-weight: bold;
+}
+.info_order{
+    background-color:rgb(255, 255, 255);
+    border-radius: 6px;
+}
+
+.item_order {
+	border-bottom: 1px solid  rgb(247, 247, 247);
+	cursor: pointer;
+	transition: all 0.5s ease-in-out;
+    margin: 10px;
+}
+
+.final_price {
+    color: rgb(241, 98, 98);
+}
+
+.radio{
+    margin-top: 10px;
+}
+
+.box{
+    background-color:rgb(255, 255, 255);
+    padding: 20px;
+    display: none;
+    margin-top: 20px;
+}
+
+.btn-order {
+    background-color: rgb(236, 99, 99);
+    margin: 30px;
+    border-radius: 4px;
+    margin-left: 35%;
+}
+
+.btn-order a{
+    text-decoration: none;
+    justify-content: center;
+    color: aliceblue;
+    font-size: 25px;
+    padding: 20px;
+
+
+}
+
