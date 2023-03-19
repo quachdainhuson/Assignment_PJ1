@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../admin.css">
+    <link rel="stylesheet" href="Public/css/admin.css">
     <style>
 
     </style>
@@ -91,19 +91,17 @@
                             <div class="col-md-8">
                             <!-- ERROR -->
                             <div class="mb-3">hien thi loi</div>
-                            <form role="form" method="post" action="">
-                                    <div class="form-group">
+                            <form role="form" method="post" action="?controller=categories&action=store">
+                                    <div>
                                         <label>Tên danh mục:</label>
-                                        <input require type="text" name="cat_name"  class="form-control" placeholder="Tên danh mục...">
+                                        <input require type="text" name="cate_name"  class="form-control" placeholder="Tên danh mục...">
                                         
                                     </div>
                                     
-                                    <div class="mb-3">..</div>
                                     
-                                        <br>
                                     <input type="submit" name="sbm" value="Cap Nhat" class="btn btn-success"></input>
                                     <button type="reset" class="btn btn-default">Làm mới</button>
-                            </div>
+                            
                             </form>
                         </div>
                     </div>

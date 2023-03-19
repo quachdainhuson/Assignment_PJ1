@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../admin.css">
+    <link rel="stylesheet" href="Public/css/admin.css">
     <style>
 
     </style>
@@ -93,7 +93,7 @@
                     <strong style="font-size: 75px; margin-left: 20px;">Danh Mục</strong>
                     <br>
                     <div id="toolbar" class="btn-group" style="margin-left: 20px;">
-                        <a href="add-categories.html" class="btn btn-success">
+                        <a href="?controller=categories&action=create" class="btn btn-success">
                             <i class="glyphicon glyphicon-plus"></i> Thêm Danh Mục
                         </a>
                     </div>
@@ -102,17 +102,22 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">ID</th>
+                        <th scope="col">STT</th>
                         <th scope="col">Danh Mục</th>
                         <th scope="col">ADD/DELETE</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    
+                    <?php
+                        $stt =1;
+                        foreach($record as $item){
+
+                        
+                    ?>
                     <tr>
-                        <th scope="row">.</th>
-                        <td>.</td>
+                        <th scope="row"><?= $stt?></th>
+                        <td><?= $item['cate_name'];  ?></td>
                         <td class="form-group">
                             <a href="edit_categories.php"><button class="btn btn-primary" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                 <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
@@ -124,7 +129,10 @@
                               </svg> Delete</button></a>
                         </td>
                     </tr>
-                    
+                    <?php
+                            $stt++;
+                        }
+                    ?>
                 </tbody>
             </table>  
 
