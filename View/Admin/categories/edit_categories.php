@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../admin.css">
+    <link rel="stylesheet" href="Public/css/admin.css">
     <style>
 
     </style>
@@ -93,33 +93,24 @@
                         <div class="panel-body">
                             <div class="col-md-8">
                             <!-- ERROR -->
-                            <div class="mb-3"><?php
-                                            if(isset($errors['error'])){
-                                                echo $errors['error'];
-                                            }
+                            <?php 
+                                foreach($record as $item){
 
-                                        ?>
-                                        
-                                    </div>
-                            <form role="form" method="post" action="">
+                                
+                            ?>
+                            <form role="form" method="post" action="?controller=<?= $controller ?>&action=update&cate_id='<?= $item['cate_id']?>'">
                                     <div class="form-group">
                                         <label>Tên danh mục:</label>
-                                        
-                                        <input require type="text" name="cat_name" value="<?php echo $cateEdit['cat_name'];?>" class="form-control" placeholder="Tên danh mục..."> </input>
-                                        
+                                        <input type="hidden" name="cate_id" value="<?= $item['cate_id'];?>">
+                                        <input type="text" name="cate_name" value="<?php echo $item['cate_name'];?>" class="form-control" placeholder="Tên danh mục..."> </input>
                                     </div>
+                                    <button type="submit" name="submit" class="btn btn-primary">Sửa</button>
+                                    <button type="reset" name="reset" class="btn btn-warning">Nhập lại</button>
                                     
-                                    <div class="mb-3"><?php
-                                            if(isset($errors['cat_name'])){
-                                                echo $errors['cat_name'];
-                                            }
-                                        ?></div>
-                                    
-                                        <br>
-                                    <input type="submit" name="sbm" value="Cap Nhat" class="btn btn-success"></input>
-                                    <button type="reset" class="btn btn-default">Làm mới</button>
-                            </div>
                             </form>
+                            <?php 
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>
