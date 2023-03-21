@@ -10,7 +10,7 @@
         // require_once('../index.php');
         // break;
         case 'categories' : require_once('Controller/Categories/categories_controller.php'); break;
-
+        case 'product': require_once('Controller/Product/product_controller.php');
 
     }
 ?>
