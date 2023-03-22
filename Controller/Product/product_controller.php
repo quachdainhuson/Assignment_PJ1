@@ -14,7 +14,7 @@
             break;
         case 'edit': 
             require_once('Model/product/product_model.php');
-            require_once('View/Admin/categories/edit_categories.php');
+            require_once('View/Admin/product/edit_product.php');
             break;
         case 'update': 
             require_once('Model/product/product_model.php');
@@ -22,7 +22,7 @@
             break;
         case 'destroy': 
             require_once('Model/product/product_model.php');
-            header('location: ?controller=categories');
+            header('location: ?controller=product');
             break;
     }
 ?>

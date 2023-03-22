@@ -64,14 +64,40 @@
         VALUES ('$name', $price, '$description', $featured, '$image',$cate, $color, $style, $size )
         ";
         mysqli_query($connect, $sql_product);
-        move_uploaded_file($file_tmp, 'image/'.$image);
+        move_uploaded_file($file_tmp, 'Public/image/'.$image);
         include_once('Config/close_connect.php');
         
+    }
+    function edit(){
+        $id = $_GET['cate_id'];
+        include_once('Config/connect.php');
+        $sql = "SELECT product.*, 
+        categories.*,
+        color.*,
+        style.*,
+        size.*
+        FROM  product 
+        INNER JOIN categories ON product.cate_id = categories.cate_id
+        INNER JOIN size ON product.size_id = size.size_id
+        INNER JOIN style ON product.style_id = style.style_id
+        INNER JOIN color ON product.color_id = color.color_id
+        ";
+        $query = mysqli_query($connect,$sql);
+        include_once('Config/close_connect.php');
+        return $query;
+    }
+    function destroy(){
+        $id = $_GET['product_id'];
+        include_once('Config/connect.php');
+        mysqli_query($connect, "DELETE FROM product WHERE product_id = '$id'");
+        include_once('Config/close_connect.php');
     }
     switch($action){
         case '': $record = index(); break;
         case 'create': $values = create(); break;
         case 'store': store(); break;
+        case 'edit': $record = edit(); break;
+        case 'destroy': destroy(); break;
     }
 
  ?>

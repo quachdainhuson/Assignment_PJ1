@@ -5,20 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ</title>
-    <link rel="shortcut icon" href="../Public/image/logo-title.png" type="image/x-icon">
-    <link rel="stylesheet" href="../Public/css/style.css">
-    <link rel="stylesheet" href="../Public/css/product.css">
-    <link rel="stylesheet" href="../Public/css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="../../Public/image/logo-title.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../Public/css/style.css">
+    <link rel="stylesheet" href="../../Public/css/product.css">
+    <link rel="stylesheet" href="../../Public/css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="../Public/font/fontawesome-free-6.3.0-web/css/all.min.css">
+    <link rel="stylesheet" href="../../Public/font/fontawesome-free-6.3.0-web/css/all.min.css">
 </head>
 <body>
     
     <div id="container">
         
         <div id="header">
-            <div class="../Public/image_logo">
-                <a href=""><img src="../Public/image/store-giay.png" alt="" id="logo"></a>  
+            <div class="../../Public/image_logo">
+                <a href=""><img src="../../Public/image/store-giay.png" alt="" id="logo"></a>  
             </div>
                 
             <ul id="menu-categories-1">
@@ -51,10 +51,10 @@
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="z-index: 1;">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="../Public/image/pic-carosel-1.jpg" class="d-block w-100" alt="...">
+            <img src="../../Public/image/pic-carosel-1.jpg" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="../Public/image/pic-carosel-2.jpg" class="d-block w-100" alt="...">
+            <img src="../../Public/image/pic-carosel-2.jpg" class="d-block w-100" alt="...">
           </div>
           
         </div>
@@ -76,8 +76,8 @@
                 <div class="product-item">
                     <div class="product-top">
                         <a href="product_detail.html" class="product-thumb">
-                            <img src="../Public/image/prd-2.jpg" alt="">
-                            <img class="img-change" src="../Public/image/prd-1.png" alt="">
+                            <img src="../../Public/image/prd-2.jpg" alt="">
+                            <img class="img-change" src="../../Public/image/prd-1.png" alt="">
                         </a>
                         <a href="product_detail.html" class="buy-now">MUA NGAY</a>
                     </div>
@@ -92,8 +92,8 @@
                 <div class="product-item">
                     <div class="product-top">
                         <a href="product_detail.html" class="product-thumb">
-                            <img src="../Public/image/prd-2.jpg" alt="">
-                            <img class="img-change" src="../Public/image/prd-1.png" alt="">
+                            <img src="../../Public/image/prd-2.jpg" alt="">
+                            <img class="img-change" src="../../Public/image/prd-1.png" alt="">
                         </a>
                         <a href="product_detail.html" class="buy-now">MUA NGAY</a>
                     </div>
@@ -108,8 +108,8 @@
                 <div class="product-item">
                     <div class="product-top">
                         <a href="product_detail.html" class="product-thumb">
-                            <img src="../Public/image/prd-2.jpg" alt="">
-                            <img class="img-change" src="../Public/image/prd-1.png" alt="">
+                            <img src="../../Public/image/prd-2.jpg" alt="">
+                            <img class="img-change" src="../../Public/image/prd-1.png" alt="">
                         </a>
                         <a href="product_detail.html" class="buy-now">MUA NGAY</a>
                     </div>
@@ -124,8 +124,8 @@
                 <div class="product-item">
                     <div class="product-top">
                         <a href="product_detail.html" class="product-thumb">
-                            <img src="../Public/image/prd-2.jpg" alt="">
-                            <img class="img-change" src="../Public/image/prd-1.png" alt="">
+                            <img src="../../Public/image/prd-2.jpg" alt="">
+                            <img class="img-change" src="../../Public/image/prd-1.png" alt="">
                         </a>
                         <a href="product_detail.html" class="buy-now">MUA NGAY</a>
                     </div>
@@ -140,8 +140,8 @@
                 <div class="product-item">
                     <div class="product-top">
                         <a href="product_detail.html" class="product-thumb">
-                            <img src="../Public/image/prd-2.jpg" alt="">
-                            <img class="img-change" src="../Public/image/prd-1.png" alt="">
+                            <img src="../../Public/image/prd-2.jpg" alt="">
+                            <img class="img-change" src="../../Public/image/prd-1.png" alt="">
                         </a>
                         <a href="product_detail.html" class="buy-now">MUA NGAY</a>
                     </div>
@@ -156,8 +156,8 @@
                 <div class="product-item">
                     <div class="product-top">
                         <a href="product_detail.html" class="product-thumb">
-                            <img src="../Public/image/prd-2.jpg" alt="">
-                            <img class="img-change" src="../Public/image/prd-1.png" alt="">
+                            <img src="../../Public/image/prd-2.jpg" alt="">
+                            <img class="img-change" src="../../Public/image/prd-1.png" alt="">
                         </a>
                         <a href="product_detail.html" class="buy-now">MUA NGAY</a>
                     </div>
@@ -172,8 +172,8 @@
                 <div class="product-item">
                     <div class="product-top">
                         <a href="product_detail.html" class="product-thumb">
-                            <img src="../Public/image/prd-2.jpg" alt="">
-                            <img class="img-change" src="../Public/image/prd-1.png" alt="">
+                            <img src="../../Public/image/prd-2.jpg" alt="">
+                            <img class="img-change" src="../../Public/image/prd-1.png" alt="">
                         </a>
                         <a href="product_detail.html" class="buy-now">MUA NGAY</a>
                     </div>
@@ -188,8 +188,8 @@
                 <div class="product-item">
                     <div class="product-top">
                         <a href="product_detail.html" class="product-thumb">
-                            <img src="../Public/image/prd-2.jpg" alt="">
-                            <img class="img-change" src="../Public/image/prd-1.png" alt="">
+                            <img src="../../Public/image/prd-2.jpg" alt="">
+                            <img class="img-change" src="../../Public/image/prd-1.png" alt="">
                         </a>
                         <a href="product_detail.html" class="buy-now">MUA NGAY</a>
                     </div>
@@ -212,8 +212,8 @@
                 <div class="product-item">
                     <div class="product-top">
                         <a href="product_detail.html" class="product-thumb">
-                            <img src="../Public/image/prd-2.jpg" alt="">
-                            <img class="img-change" src="../Public/image/prd-1.png" alt="">
+                            <img src="../../Public/image/prd-2.jpg" alt="">
+                            <img class="img-change" src="../../Public/image/prd-1.png" alt="">
                         </a>
                         <a href="product_detail.html" class="buy-now">MUA NGAY</a>
                     </div>
@@ -228,8 +228,8 @@
                 <div class="product-item">
                     <div class="product-top">
                         <a href="product_detail.html" class="product-thumb">
-                            <img src="../Public/image/prd-2.jpg" alt="">
-                            <img class="img-change" src="../Public/image/prd-1.png" alt="">
+                            <img src="../../Public/image/prd-2.jpg" alt="">
+                            <img class="img-change" src="../../Public/image/prd-1.png" alt="">
                         </a>
                         <a href="product_detail.html" class="buy-now">MUA NGAY</a>
                     </div>
@@ -244,8 +244,8 @@
                 <div class="product-item">
                     <div class="product-top">
                         <a href="product_detail.html" class="product-thumb">
-                            <img src="../Public/image/prd-2.jpg" alt="">
-                            <img class="img-change" src="../Public/image/prd-1.png" alt="">
+                            <img src="../../Public/image/prd-2.jpg" alt="">
+                            <img class="img-change" src="../../Public/image/prd-1.png" alt="">
                         </a>
                         <a href="product_detail.html" class="buy-now">MUA NGAY</a>
                     </div>
@@ -260,8 +260,8 @@
                 <div class="product-item">
                     <div class="product-top">
                         <a href="product_detail.html" class="product-thumb">
-                            <img src="../Public/image/prd-2.jpg" alt="">
-                            <img class="img-change" src="../Public/image/prd-1.png" alt="">
+                            <img src="../../Public/image/prd-2.jpg" alt="">
+                            <img class="img-change" src="../../Public/image/prd-1.png" alt="">
                         </a>
                         <a href="product_detail.html" class="buy-now">MUA NGAY</a>
                     </div>
@@ -276,8 +276,8 @@
                 <div class="product-item">
                     <div class="product-top">
                         <a href="product_detail.html" class="product-thumb">
-                            <img src="../Public/image/prd-2.jpg" alt="">
-                            <img class="img-change" src="../Public/image/prd-1.png" alt="">
+                            <img src="../../Public/image/prd-2.jpg" alt="">
+                            <img class="img-change" src="../../Public/image/prd-1.png" alt="">
                         </a>
                         <a href="product_detail.html" class="buy-now">MUA NGAY</a>
                     </div>
@@ -292,8 +292,8 @@
                 <div class="product-item">
                     <div class="product-top">
                         <a href="product_detail.html" class="product-thumb">
-                            <img src="../Public/image/prd-2.jpg" alt="">
-                            <img class="img-change" src="../Public/image/prd-1.png" alt="">
+                            <img src="../../Public/image/prd-2.jpg" alt="">
+                            <img class="img-change" src="../../Public/image/prd-1.png" alt="">
                         </a>
                         <a href="product_detail.html" class="buy-now">MUA NGAY</a>
                     </div>
@@ -308,8 +308,8 @@
                 <div class="product-item">
                     <div class="product-top">
                         <a href="product_detail.html" class="product-thumb">
-                            <img src="../Public/image/prd-2.jpg" alt="">
-                            <img class="img-change" src="../Public/image/prd-1.png" alt="">
+                            <img src="../../Public/image/prd-2.jpg" alt="">
+                            <img class="img-change" src="../../Public/image/prd-1.png" alt="">
                         </a>
                         <a href="product_detail.html" class="buy-now">MUA NGAY</a>
                     </div>
@@ -324,8 +324,8 @@
                 <div class="product-item">
                     <div class="product-top">
                         <a href="product_detail.html" class="product-thumb">
-                            <img src="../Public/image/prd-2.jpg" alt="">
-                            <img class="img-change" src="../Public/image/prd-1.png" alt="">
+                            <img src="../../Public/image/prd-2.jpg" alt="">
+                            <img class="img-change" src="../../Public/image/prd-1.png" alt="">
                         </a>
                         <a href="product_detail.html" class="buy-now">MUA NGAY</a>
                     </div>
@@ -343,7 +343,7 @@
 	<div class = "row" >
         <div class="col-3">
             <div class = "frame col-xs-6">
-			    <img src = "../Public/image/banner-1.jpg">
+			    <img src = "../../Public/image/banner-1.jpg">
                 <div class = "details">
                     <h1>CONVERSE</h1>
                     <p>CHUCK 70S</p>
@@ -352,7 +352,7 @@
         </div>
         <div class="col-3">
             <div class = "frame col-xs-6">
-                <img src = "../Public/image/banner-2.jpg">
+                <img src = "../../Public/image/banner-2.jpg">
                 <div class = "details">
                     <h1>CONVERSE</h1>
                     <p>CLASSIC</p>
@@ -361,7 +361,7 @@
         </div>
         <div class="col-3">
             <div class = "frame col-xs-6">
-			<img src = "../Public/image/banner-3.jpg">
+			<img src = "../../Public/image/banner-3.jpg">
 			<div class = "details">
 				<h1>CONVERSE</h1>
 				<p>HOT SALE</p>
@@ -370,7 +370,7 @@
         </div>	
         <div class="col-3">
             <div class = "frame col-xs-6">
-                <img src = "../Public/image/banner-4.jpg">
+                <img src = "../../Public/image/banner-4.jpg">
             </div>
         </div>
 	</div>
