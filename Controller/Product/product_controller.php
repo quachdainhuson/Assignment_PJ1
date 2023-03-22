@@ -6,11 +6,11 @@
             break;
         case 'create': 
             require_once('Model/product/product_model.php');
-            require_once('View/Admin/categories/add_categories.php');
+            require_once('View/Admin/product/add_product.php');
             break;
         case 'store': 
             require_once('Model/product/product_model.php');
-            header('location: ?controller=categories');
+            header('location: ?controller=product');
             break;
         case 'edit': 
             require_once('Model/product/product_model.php');

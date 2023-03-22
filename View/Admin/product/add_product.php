@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../admin.css">
+    <link rel="stylesheet" href="Public/css/admin.css">
+    <script src="ckeditor/ckeditor.js"></script>
     <style>
 
     </style>
@@ -90,67 +91,89 @@
             <br>
             <div class="container-fluid">
                 <div class="row">
-                <form action="add-product-process.php" role="form" method="post" enctype="multipart/form-data">
+                <form action="?controller=product&action=store" role="form" method="post" enctype="multipart/form-data">
                     <div class="col-4" style = "padding-left: 50px; float: left;" >
                         <br>
                         <br>
-                        <input type="file" name="prd_image" onchange="preview()">
+                        <input type="file" name="product_image" id="product_image" onchange="preview()">
                         <img id="frame" src="image/no-img.png" width="300px" height="400px"/>
                     </div>
                     <div class="col-8" style="padding-left: 50px; float: right;">
                         <br><br><br><br>
                                     <div class="form-group">
                                         <label>Tên sản phẩm</label>
-                                        <input required name="prd_name" class="form-control" placeholder="">
+                                        <input required name="product_name" class="form-control" placeholder="">
                                     </div>                            
                                     <div class="form-group">
                                         <label>Giá sản phẩm</label>
-                                        <input required name="prd_price" type="number" min="0" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Khuyến mãi</label>
-                                        <input required name="prd_promotion" type="text" class="form-control">
-                                    </div>  
-                                    <div class="form-group">
-                                        <label>Tình trạng</label>
-                                        <input required name="prd_new" type="text" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Bảo hành</label>
-                                        <input required name="prd_warranty" type="text" class="form-control">
-                                    </div>  
-                                    <div class="form-group">
-                                        <label>Danh mục</label>
-                                        <select name="cat_id" class="form-control">
-                                            <?php
-                                                if(mysqli_num_rows($queryAllCategories)) {
-                                                    while($cate = mysqli_fetch_assoc($queryAllCategories)) {
-                                            ?>
-                                            <option value=<?php echo $cate['cat_id']; ?>><?php echo $cate['cat_name']; ?></option>
-                                            <?php
-                                                  }
-                                                }
-                                            ?>
-                                        </select>
+                                        <input required name="product_price" type="number" min="0" class="form-control">
                                     </div>
                                     <div class="form-group">
                                         <label>Sản phẩm nổi bật</label>
                                         <div class="checkbox">
                                             <label>
-                                                <input name="prd_featured" type="checkbox">Nổi Bật</input>
+                                                <input name="product_featured" type="checkbox">Nổi Bật</input>
                                             </label>
                                         </div>
-                                    </div>
+                                    </div> 
                                     <div class="form-group">
-                                        <label>Trạng thái</label>
-                                        <select name="prd_status" class="form-control">
-                                            <option value=1 selected>Còn hàng</option>
-                                            <option value=0>Hết hàng</option>
+                                        <label>Danh mục</label>
+                                        <select name="cate_id" class="form-control">
+                                        <?php 
+                                        foreach($values['categories'] as $category){ 
+                                    ?>
+                                            <option value="<?= $category['cate_id'];?>"><?= $category['cate_name'];?></option>
+                                            <?php
+                                        }
+                                    ?>
                                         </select>
                                     </div>
+
+                                    
+                                    
+                                    <div class="form-group">
+                                        <label>Size</label>
+                                        <select name="size_id" class="form-control">
+                                        <?php 
+                                            foreach($values['size'] as $size){
+                                        ?>
+                                            <option value="<?= $size['size_id'];?>"><?= $size['size_number'];?></option>
+                                            <?php
+                                        }?>
+                                        </select>
+                                    </div>
+                                    
+                                    
+                                    <div class="form-group">
+                                        <label>Màu Sắc</label>
+                                        <select name="color_id" class="form-control">
+                                        <?php 
+                                        foreach($values['color'] as $color){
+                                        ?>
+                                            <option value="<?= $color['color_id'];?>"><?= $color['color_name'];?></option>
+                                        
+                                        <?php
+                                        }
+                                        ?>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label>Kiểu Dáng</label>
+                                        <select name="style_id" class="form-control">
+                                        <?php 
+                                        foreach($values['style'] as $style){
+                                    ?>
+                                            <option value="<?= $style['style_id'];?>"><?= $style['style_name'];?></option>
+                                            <?php
+                                        }
+                                    ?>
+                                        </select>
+                                    </div>
+                                    
                                     <div class="form-group">
                                         <label>Mô tả sản phẩm</label>
-                                        <textarea required name="prd_details" class="form-control" rows="3"></textarea>
+                                        <textarea required name="product_description" id="product_description" class="form-control" cols="30" rows="10"></textarea>
                                     </div>
                                     <input name="sbm" type="submit" value="Thêm mới" class="btn btn-primary"></input>
                                     <button type="reset" class="btn btn-light">Reset</button>
@@ -174,6 +197,7 @@
         frame.src=URL.createObjectURL(event.target.files[0]);
         }
     </script>
+    <script>CKEDITOR.replace('product_description')</script>
 </body>
 
 </html>

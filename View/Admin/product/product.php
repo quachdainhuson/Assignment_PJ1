@@ -91,7 +91,7 @@
                     <strong style="font-size: 75px; margin-left: 20px;">Sản Phẩm</strong>
                     <br>
                     <div id="toolbar" class="btn-group" style="margin-left: 20px;">
-                        <a href="add-product.php" class="btn btn-success">
+                        <a href="?controller=product&action=create" class="btn btn-success">
                             <i class="glyphicon glyphicon-plus"></i> Thêm Sản Phẩm
                         </a>
                     </div>
@@ -115,11 +115,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                
+                                <?php 
+                                    $stt = 1;
+                                    foreach( $record as $item){ 
+                                ?>
                                 <tr>
-                                    <th scope="row"></th>
-                                    <td></td>
-                                    <td> VND</td>
+                                    <th scope="row"><?= $item['product_id'];?></th>
+                                    <td><?= $item['product_name'];?></td>
+                                    <td><?= $item['product_price'];?> VND</td>
                                     <td style="text-align: center" id="product-img"><img width="90" height="120" src="" /></td>
                                     <td>
                                         
@@ -141,7 +144,10 @@
                                         
                                     </td>
                                 </tr>
-
+                                <?php
+                                    $stt++;
+                                }
+                                ?>          
 
                             
                             
