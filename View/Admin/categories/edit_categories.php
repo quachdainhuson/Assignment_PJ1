@@ -51,7 +51,7 @@
             </div>
             <div class="categories">
                 <div class="list-group">
-                    <a href="dash-board.php" class="list-group-item list-group-item-action ">
+                    <a href="dash-board.html" class="list-group-item list-group-item-action ">
                         <svg xmlns="http://www.w3.org/2000/svg " width="16 " height="16 " fill="currentColor "
                             class="bi bi-speedometer " viewBox="0 0 16 16 ">
                             <path
@@ -61,7 +61,7 @@
                                 d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.945 11.945 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0z " />
                         </svg> DashBoard
                     </a>
-                    <a href="user.php " class="list-group-item list-group-item-action  "><svg
+                    <a href="?controller=user" class="list-group-item list-group-item-action  "><svg
                             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-person-circle" viewBox="0 0 16 16">
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
@@ -69,15 +69,15 @@
                                 d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                         </svg> Quản Lý Thành Viên
                     </a>
-                    <a href="product-admin.php" class="list-group-item list-group-item-action " aria-current="true"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-phone" viewBox="0 0 16 16">
+                    <a href="?controller=product" class="list-group-item list-group-item-action "
+                        aria-current="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
                             <path
                                 d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z" />
                             <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
                         </svg> Quản Lý Sản Phẩm
                     </a>
-                    <a href="categories.php" class="list-group-item list-group-item-action active"><svg
+                    <a href="?controller=categories" class="list-group-item list-group-item-action active"><svg
                             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-tag-fill" viewBox="0 0 16 16">
                             <path
@@ -85,7 +85,7 @@
                         </svg> Quản Lý Danh Mục
                     </a>
                     </a>
-                    <a href="receipt.php" class="list-group-item list-group-item-action "><svg
+                    <a href="receipt.html" class="list-group-item list-group-item-action "><svg
                             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-cart2" viewBox="0 0 16 16">
                             <path

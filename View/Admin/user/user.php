@@ -10,7 +10,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
-        <link rel="stylesheet" href="../admin.css">
+        <link rel="stylesheet" href="Public/css/admin.css">
         <style>
 
         </style>
@@ -52,17 +52,17 @@
                             <path fill-rule="evenodd " d="M6.664 15.889A8 8 0 1 1 9.336.11a8 8 0 0 1-2.672 15.78zm-4.665-4.283A11.945 11.945 0 0 1 8 10c2.186 0 4.236.585 6.001 1.606a7 7 0 1 0-12.002 0z "/>
                         </svg> DashBoard
                     </a>
-                    <a href="user.html " class="list-group-item list-group-item-action active "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <a href="?controller=user " class="list-group-item list-group-item-action active "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                         <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
                         </svg> Quản Lý Thành Viên
                     </a>
-                    <a href="product-admin.html" class="list-group-item list-group-item-action" aria-current="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
+                    <a href="?controller=product" class="list-group-item list-group-item-action" aria-current="true"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
                         <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
                         <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
                         </svg> Quản Lý Sản Phẩm
                     </a>
-                        <a href="categories.html" class="list-group-item list-group-item-action "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tag-fill" viewBox="0 0 16 16">
+                        <a href="?controller=categories" class="list-group-item list-group-item-action "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tag-fill" viewBox="0 0 16 16">
                         <path d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
                         </svg> Quản Lý Danh Mục
                     </a>
@@ -87,7 +87,7 @@
                         <strong style="font-size: 75px; margin-left: 20px;">Người Dùng</strong>
                         <br>
                         <div id="toolbar" class="btn-group" style="margin-left: 20px;">
-                            <a href="add-user.html" class="btn btn-success">
+                            <a href="?controller=user&action=create" class="btn btn-success">
                                 <i class="glyphicon glyphicon-plus"></i> Thêm Người Dùng
                             </a>
                         </div>
@@ -112,36 +112,43 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        
+                                            <?php
+                                                $stt =1;
+                                                foreach($record as $item){
+
+                                                
+                                            ?>
                                             <tr>
                                                 <th scope="row">
-                                                    1
+                                                    <?= $stt?>
                                                 </th>
                                                 <td>
-                                                    Quách Đại Như Sơn
+                                                    <?= $item['full_name'];?>
                                                 </td>
                                                 <td>
-                                                    nhusonne
+                                                    <?= $item['user_name'];?>
                                                 </td>
                                                 <td>
-                                                    nhuson35a@gmail.com
+                                                    <?= $item['user_email'];?>
                                                 </td>
                                                 <td>
-                                                    
-                                                    Admin
+                                                    <?php if($item['user_level'] == 1){echo 'Admin';}else{echo 'Member';}?>
                                                 </td>
                                                 <td class="form-group">
-                                                    <a href="edit-user.php"><button class="btn btn-primary" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                                    <a href="?controller=user&action=edit&user_id=<?= $item['user_id'];?>"><button class="btn btn-primary" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                                 <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                                                 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                                             </svg> Edit</button></a>
 
-                                                    <a href="remove-user.php"><button class="btn btn-primary" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                    <a href="?controller=user&action=destroy&user_id=<?= $item['user_id'];?>"><button class="btn btn-primary" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
                                                 <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
                                             </svg> Delete</button></a>
                                                 </td>
                                             </tr>
-                                            
+                                            <?php
+                                                    $stt++;
+                                                }
+                                            ?>
                                     </tbody>
                                 </table>
                                 <div class="panel-footer">
