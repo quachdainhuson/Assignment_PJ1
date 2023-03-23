@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Public/css/admin.css">
+    <script src="ckeditor/ckeditor.js"></script>
     <style>
 
     </style>
@@ -87,28 +88,46 @@
             <br>
             <div class="container-fluid">
                 <div class="row">
-                <form action="?controller=product&action=update" role="form" method="post" enctype="multipart/form-data">
+                <?php 
+                            foreach($values['product'] as $product){ 
+                        ?>
+                    <form role="form" method="post"action="?controller=<?= $controller ?>&action=update&product_id='<?= $product['product_id']?>'">
                     <div class="col-4" style = "padding-left: 50px; float: left;" >
                         <br>
                         <br>
+                        <input type="hidden" name="product_id" value="<?= $product['product_id'];?>">
                         <input type="file" name="product_image" id="product_image" onchange="preview()">
-                        <img id="frame" src="image/no-img.png" width="300px" height="400px"/>
+                        <img id="frame" name="product_image" src="Public/image/<?= $product['product_image'];?>" width="400px" height="400px"/>
+                              
                     </div>
                     <div class="col-8" style="padding-left: 50px; float: right;">
                         <br><br><br><br>
                                     <div class="form-group">
                                         <label>Tên sản phẩm</label>
-                                        <input required name="product_name" class="form-control" placeholder="">
+                                    <?php 
+                                        foreach($values['product'] as $product){ 
+                                    ?>
+                                        <input required name="product_name" class="form-control" placeholder="" value="<?= $product['product_name'];?>">
+                                        <?php
+                                        }
+                                    ?>
                                     </div>                            
                                     <div class="form-group">
                                         <label>Giá sản phẩm</label>
-                                        <input required name="product_price" type="number" min="0" class="form-control">
+                                    <?php 
+                                        foreach($values['product'] as $product){ 
+                                    ?>
+                                        <input required name="product_price" type="number" min="0" class="form-control" value="<?= $product['product_price'];?>">
+                                    <?php
+                                        }
+                                    ?>
                                     </div>
                                     <div class="form-group">
                                         <label>Sản phẩm nổi bật</label>
                                         <div class="checkbox">
                                             <label>
-                                                <input name="product_featured" type="checkbox">Nổi Bật</input>
+                                                <input name="product_featured" type="checkbox"<?php if($product['product_featured'] == 1){echo 'checked';}?>>Nổi Bật
+                                            </input>
                                             </label>
                                         </div>
                                     </div> 
@@ -116,9 +135,10 @@
                                         <label>Danh mục</label>
                                         <select name="cate_id" class="form-control">
                                         <?php 
+
                                         foreach($values['categories'] as $category){ 
                                     ?>
-                                            <option value="<?= $category['cate_id'];?>"><?= $category['cate_name'];?></option>
+                                                <option <?php if($product['cate_id'] == $category['cate_id']){echo 'selected';}?> value="<?php echo $category['cate_id'];?>"><?php echo $category['cate_name'];?></option>
                                             <?php
                                         }
                                     ?>
@@ -133,7 +153,7 @@
                                         <?php 
                                             foreach($values['size'] as $size){
                                         ?>
-                                            <option value="<?= $size['size_id'];?>"><?= $size['size_number'];?></option>
+                                                <option <?php if($product['size_id'] == $size['size_id']){echo 'selected';}?> value="<?php echo $size['size_id'];?>"><?php echo $size['size_number'];?></option>
                                             <?php
                                         }?>
                                         </select>
@@ -146,8 +166,7 @@
                                         <?php 
                                         foreach($values['color'] as $color){
                                         ?>
-                                            <option value="<?= $color['color_id'];?>"><?= $color['color_name'];?></option>
-                                        
+                                            <option <?php if($product['color_id'] == $color['color_id']){echo 'selected';}?> value="<?php echo $color['color_id'];?>"><?php echo $color['color_name'];?></option>
                                         <?php
                                         }
                                         ?>
@@ -160,7 +179,8 @@
                                         <?php 
                                         foreach($values['style'] as $style){
                                     ?>
-                                            <option value="<?= $style['style_id'];?>"><?= $style['style_name'];?></option>
+                                        <option <?php if($product['style_id'] == $style['style_id']){echo 'selected';}?> value="<?php echo $style['style_id'];?>"><?php echo $style['style_name'];?></option>
+
                                             <?php
                                         }
                                     ?>
@@ -169,11 +189,14 @@
                                     
                                     <div class="form-group">
                                         <label>Mô tả sản phẩm</label>
-                                        <textarea required name="product_description" id="product_description" class="form-control" cols="30" rows="10"></textarea>
+                                        <textarea required name="product_description" id="product_description" class="form-control" cols="30" rows="10"><?= $product['product_description'];?></textarea>
                                     </div>
-                                    <input name="sbm" type="submit" value="Thêm mới" class="btn btn-primary"></input>
-                                    <button type="reset" class="btn btn-light">Reset</button>
+                                    <button type="submit" name="submit" class="btn btn-primary">Sửa</button>
+                                    <button type="reset" name="reset" class="btn btn-warning">Nhập lại</button>
                                 </form>
+                                <?php
+                            }
+                        ?>
                     </div>
                     
                     
@@ -193,6 +216,7 @@
         frame.src=URL.createObjectURL(event.target.files[0]);
         }
     </script>
+    <script>CKEDITOR.replace('product_description')</script>
 </body>
 
 </html>

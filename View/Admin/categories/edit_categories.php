@@ -119,8 +119,7 @@
 
                                 
                             ?>
-                                <form role="form" method="post"
-                                    action="?controller=<?= $controller ?>&action=update&cate_id='<?= $item['cate_id']?>'">
+                                <form role="form" method="post"action="?controller=<?= $controller ?>&action=update&cate_id='<?= $item['cate_id']?>'">
                                     <div class="form-group">
                                         <label>Tên danh mục:</label>
                                         <input type="hidden" name="cate_id" value="<?= $item['cate_id'];?>">

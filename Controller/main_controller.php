@@ -6,7 +6,9 @@
     // Gọi chức năng cho Client
     switch($controller){
         // case '': 
-            
+        case '':
+            require_once('View/Client/index.php'); break;
+
         // require_once('../index.php');
         // break;
         case 'categories' : require_once('Controller/Categories/categories_controller.php'); break;

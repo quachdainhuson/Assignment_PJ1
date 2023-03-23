@@ -18,7 +18,7 @@
             break;
         case 'update': 
             require_once('Model/product/product_model.php');
-            header('location: ?controller=categories');
+            header('location: ?controller=product');
             break;
         case 'destroy': 
             require_once('Model/product/product_model.php');
