@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../Public/image/logo-title.png" type="image/x-icon">
     <title>Document</title>
-    <link rel="stylesheet" href="../Public/css/style.css">
-    <link rel="stylesheet" href="../Public/css/product.css">
-    <link rel="stylesheet" href="../Public/css/login.css">
-    <link rel="stylesheet" href="../Public/css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Public/css/style.css">
+    <link rel="stylesheet" href="Public/css/product.css">
+    <link rel="stylesheet" href="Public/css/login.css">
+    <link rel="stylesheet" href="Public/css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="../Public/font/fontawesome-free-6.3.0-web/css/all.min.css">
+    <link rel="stylesheet" href="Public/font/fontawesome-free-6.3.0-web/css/all.min.css">
 </head>
 <body>
     <div id="container">
@@ -53,19 +53,19 @@
             
         </div>
         <br><br>
-        <form>
+        <form role="form" method="post" action="index.php?controller=login&action=checklogin">
             <div class="mb-3">
               <label for="exampleInputEmail1" class="form-label">Email</label>
-              <input type="email" class="form-control" name="user_name" aria-describedby="emailHelp" placeholder="Vui lòng nhập email của bạn">
+              <input type="text" class="form-control" name="user_name" aria-describedby="emailHelp" placeholder="Vui lòng nhập email của bạn">
               
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Mật Khẩu</label>
-              <input type="password" class="form-control" name="password" placeholder="Vui lòng nhập mật khẩu">
+              <input type="password" class="form-control" name="pass_word" placeholder="Vui lòng nhập mật khẩu">
             </div>
             
             <div class="button-login">
-                <button type="submit" class="btn btn-primary">ĐĂNG NHẬP</button>
+                <button type="submit" name="sbm" class="btn btn-primary">Đăng nhập</button>
                 <p>Bạn chưa có tài khoản? <a href="register.html">Đăng ký ngay</a></p>
             </div>
           </form>

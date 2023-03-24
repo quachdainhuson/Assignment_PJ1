@@ -92,7 +92,7 @@
                 <?php 
                             foreach($values['product'] as $product){ 
                         ?>
-                    <form role="form" method="post"action="?controller=<?= $controller ?>&action=update&product_id='<?= $product['product_id']?>'">
+                    <form role="form"  enctype="multipart/form-data" method="post" action="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=update">
                     <div class="col-4" style = "padding-left: 50px; float: left;" >
                         <br>
                         <br>

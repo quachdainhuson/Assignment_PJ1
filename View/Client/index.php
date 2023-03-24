@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ</title>
-    <link rel="shortcut icon" href="../../Public/image/logo-title.png" type="image/x-icon">
-    <link rel="stylesheet" href="../../Public/css/style.css">
-    <link rel="stylesheet" href="../../Public/css/product.css">
-    <link rel="stylesheet" href="../../Public/css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="../Public/image/logo-title.png" type="image/x-icon">
+    <link rel="stylesheet" href="Public/css/style.css">
+    <link rel="stylesheet" href="Public/css/product.css">
+    <link rel="stylesheet" href="Public/css/bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../Public/font/fontawesome-free-6.3.0-web/css/all.min.css">
+    <link rel="stylesheet" href="Public/font/fontawesome-free-6.3.0-web/css/all.min.css">
 </head>
 <body>
     
@@ -24,8 +24,13 @@
             <ul id="menu-categories-1">
                 <li><a href="index.html">TRANG CHỦ</a></li>
                 <li><a href="product.html">GIÀY</a></li>
-                <li><a href="">CONVERSE</a></li>
-                <li><a href="">VANS</a></li>
+                <?php
+                    foreach($arr['categories'] as $item){
+                ?>
+                <li><a href=""></a><?=$item['cate_name'];?></li>
+                <?php
+                    }
+                ?>
                 <li><a href="">HOT PRODUCT</a></li>
                 <li><a href="intro.html">ABOUT US</a></li>
             </ul>
@@ -69,137 +74,31 @@
     </div>
     <div id="wrapper" style="z-index: 1000;">
         <div class="headline">
-            <h3>SẢN PHẨM BÁN CHẠY</h3>
+            <h3>SẢN PHẨM NỔI BẬT</h3>
         </div>
         <ul class="products">
+            <?php
+                foreach($arr['featured'] as $item){  
+            ?>
             <li>
                 <div class="product-item">
                     <div class="product-top">
                         <a href="product_detail.html" class="product-thumb">
-                            <img src="../../Public/image/prd-2.jpg" alt="">
-                            <img class="img-change" src="../../Public/image/prd-1.png" alt="">
+                            <img src="Public/image/<?=$item['product_image']?>" alt="">
+                            <img class="img-change" src="Public/image/prd-1.png" alt="">
                         </a>
                         <a href="product_detail.html" class="buy-now">MUA NGAY</a>
                     </div>
                         <div class="product-info">
-                            <a href="product_detail.html" class="product-cat">Converse</a>
-                            <a href="product_detail.html" class="product-name">Converse Run Star Hike</a>
-                            <div class="product-price">3.200.000đ</div>
+                            <a href="product_detail.html" class="product-cat"><?= $item['cate_name'];?></a>
+                            <a href="product_detail.html" class="product-name"><?= $item['product_name'];?></a>
+                            <div class="product-price"><?= $item['product_price'];?>đ</div>
                         </div>
                 </div>
             </li>
-            <li>
-                <div class="product-item">
-                    <div class="product-top">
-                        <a href="product_detail.html" class="product-thumb">
-                            <img src="../../Public/image/prd-2.jpg" alt="">
-                            <img class="img-change" src="../../Public/image/prd-1.png" alt="">
-                        </a>
-                        <a href="product_detail.html" class="buy-now">MUA NGAY</a>
-                    </div>
-                        <div class="product-info">
-                            <a href="product_detail.html" class="product-cat">Converse</a>
-                            <a href="product_detail.html" class="product-name">Converse Run Star Hike</a>
-                            <div class="product-price">3.200.000đ</div>
-                        </div>
-                </div>
-            </li>
-            <li>
-                <div class="product-item">
-                    <div class="product-top">
-                        <a href="product_detail.html" class="product-thumb">
-                            <img src="../../Public/image/prd-2.jpg" alt="">
-                            <img class="img-change" src="../../Public/image/prd-1.png" alt="">
-                        </a>
-                        <a href="product_detail.html" class="buy-now">MUA NGAY</a>
-                    </div>
-                        <div class="product-info">
-                            <a href="product_detail.html" class="product-cat">Converse</a>
-                            <a href="product_detail.html" class="product-name">Converse Run Star Hike</a>
-                            <div class="product-price">3.200.000đ</div>
-                        </div>
-                </div>
-            </li>
-            <li>
-                <div class="product-item">
-                    <div class="product-top">
-                        <a href="product_detail.html" class="product-thumb">
-                            <img src="../../Public/image/prd-2.jpg" alt="">
-                            <img class="img-change" src="../../Public/image/prd-1.png" alt="">
-                        </a>
-                        <a href="product_detail.html" class="buy-now">MUA NGAY</a>
-                    </div>
-                        <div class="product-info">
-                            <a href="product_detail.html" class="product-cat">Converse</a>
-                            <a href="product_detail.html" class="product-name">Converse Run Star Hike</a>
-                            <div class="product-price">3.200.000đ</div>
-                        </div>
-                </div>
-            </li>
-            <li>
-                <div class="product-item">
-                    <div class="product-top">
-                        <a href="product_detail.html" class="product-thumb">
-                            <img src="../../Public/image/prd-2.jpg" alt="">
-                            <img class="img-change" src="../../Public/image/prd-1.png" alt="">
-                        </a>
-                        <a href="product_detail.html" class="buy-now">MUA NGAY</a>
-                    </div>
-                        <div class="product-info">
-                            <a href="product_detail.html" class="product-cat">Converse</a>
-                            <a href="product_detail.html" class="product-name">Converse Run Star Hike</a>
-                            <div class="product-price">3.200.000đ</div>
-                        </div>
-                </div>
-            </li>
-            <li>
-                <div class="product-item">
-                    <div class="product-top">
-                        <a href="product_detail.html" class="product-thumb">
-                            <img src="../../Public/image/prd-2.jpg" alt="">
-                            <img class="img-change" src="../../Public/image/prd-1.png" alt="">
-                        </a>
-                        <a href="product_detail.html" class="buy-now">MUA NGAY</a>
-                    </div>
-                        <div class="product-info">
-                            <a href="product_detail.html" class="product-cat">Converse</a>
-                            <a href="product_detail.html" class="product-name">Converse Run Star Hike</a>
-                            <div class="product-price">3.200.000đ</div>
-                        </div>
-                </div>
-            </li>
-            <li>
-                <div class="product-item">
-                    <div class="product-top">
-                        <a href="product_detail.html" class="product-thumb">
-                            <img src="../../Public/image/prd-2.jpg" alt="">
-                            <img class="img-change" src="../../Public/image/prd-1.png" alt="">
-                        </a>
-                        <a href="product_detail.html" class="buy-now">MUA NGAY</a>
-                    </div>
-                        <div class="product-info">
-                            <a href="product_detail.html" class="product-cat">Converse</a>
-                            <a href="product_detail.html" class="product-name">Converse Run Star Hike</a>
-                            <div class="product-price">3.200.000đ</div>
-                        </div>
-                </div>
-            </li>
-            <li>
-                <div class="product-item">
-                    <div class="product-top">
-                        <a href="product_detail.html" class="product-thumb">
-                            <img src="../../Public/image/prd-2.jpg" alt="">
-                            <img class="img-change" src="../../Public/image/prd-1.png" alt="">
-                        </a>
-                        <a href="product_detail.html" class="buy-now">MUA NGAY</a>
-                    </div>
-                        <div class="product-info">
-                            <a href="product_detail.html" class="product-cat">Converse</a>
-                            <a href="product_detail.html" class="product-name">Converse Run Star Hike</a>
-                            <div class="product-price">3.200.000đ</div>
-                        </div>
-                </div>
-            </li>
+            <?php
+                }
+            ?>
         </ul>
     </div>
     <div class="line"></div>

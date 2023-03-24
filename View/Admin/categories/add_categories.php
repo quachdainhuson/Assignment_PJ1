@@ -112,7 +112,7 @@
                             <div class="col-md-8">
                                 <!-- ERROR -->
                                 <div class="mb-3">hien thi loi</div>
-                                <form role="form" method="post" action="?controller=categories&action=store">
+                                <form role="form"  enctype="multipart/form-data" method="post" action="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=store">
                                     <div>
                                         <label>Tên danh mục:</label>
                                         <input require type="text" name="cate_name" class="form-control"

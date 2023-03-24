@@ -4,16 +4,13 @@
     // Điều khiển COntroller làm gì
     $action = $_GET['action'] ?? '';
     // Gọi chức năng cho Client
-    switch($controller){
-        // case '': 
-        case '':
-            require_once('View/Client/index.php'); break;
-
-        // require_once('../index.php');
-        // break;
-        case 'categories' : require_once('Controller/Categories/categories_controller.php'); break;
-        case 'product': require_once('Controller/Product/product_controller.php');
-        case 'user': require_once('Controller/user/user_controller.php');
-
+    
+    if(!isset($_GET['controller'])) {
+        require_once('Controller/Client/main_client_controller.php');
+    }else {
+        switch($controller) {
+            case 'admin' : require_once('Controller/Admin/main_admin_controller.php'); break;
+            case 'login' : require_once('Controller/Admin/login/login_controller.php'); break;
+        }
     }
 ?>

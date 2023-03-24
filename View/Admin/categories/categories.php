@@ -113,7 +113,7 @@
                 <strong style="font-size: 75px; margin-left: 20px;">Danh Mục</strong>
                 <br>
                 <div id="toolbar" class="btn-group" style="margin-left: 20px;">
-                    <a href="?controller=categories&action=create" class="btn btn-success">
+                    <a href="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=create" class="btn btn-success">
                         <i class="glyphicon glyphicon-plus"></i> Thêm Danh Mục
                     </a>
                 </div>
@@ -139,7 +139,7 @@
                         <th scope="row"><?= $stt?></th>
                         <td><?= $item['cate_name'];  ?></td>
                         <td class="form-group">
-                            <a href="?controller=<?= $controller ?>&action=edit&cate_id=<?= $item['cate_id'];?>"><button
+                            <a href="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=edit&cate_id=<?= $item['cate_id'];?>"><button
                                     class="btn btn-primary" type="submit"><svg xmlns="http://www.w3.org/2000/svg"
                                         width="16" height="16" fill="currentColor" class="bi bi-pencil-square"
                                         viewBox="0 0 16 16">
@@ -149,7 +149,7 @@
                                             d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
                                     </svg> Edit</button></a>
 
-                            <a href="?controller=<?= $controller ?>&action=destroy&cate_id=<?= $item['cate_id'];?>"><button
+                            <a href="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=destroy&cate_id=<?= $item['cate_id'];?>"><button
                                     class="btn btn-primary" type="submit"><svg xmlns="http://www.w3.org/2000/svg"
                                         width="16" height="16" fill="currentColor" class="bi bi-trash-fill"
                                         viewBox="0 0 16 16">

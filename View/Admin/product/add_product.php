@@ -92,7 +92,7 @@
             <br>
             <div class="container-fluid">
                 <div class="row">
-                <form action="?controller=product&action=store" role="form" method="post" enctype="multipart/form-data">
+                <form role="form"  enctype="multipart/form-data" method="post" action="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=store">
                     <div class="col-4" style = "padding-left: 50px; float: left;" >
                         <br>
                         <br>
