@@ -121,7 +121,8 @@
                                         <label>Danh mục</label>
                                         <select name="cate_id" class="form-control">
                                         <?php 
-                                        foreach($values['categories'] as $category){ 
+                                        foreach($values['categories'] as $category){
+                                            echo $category['cate_name']; 
                                     ?>
                                             <option value="<?= $category['cate_id'];?>"><?= $category['cate_name'];?></option>
                                             <?php

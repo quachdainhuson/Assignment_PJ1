@@ -111,6 +111,7 @@
                                     <th scope="col">Hình Ảnh</th>
                                     <th scope="col">Trạng Thái</th>
                                     <th scope="col">Danh Mục</th>
+                                    <th scope="col">Kích Cỡ</th>
                                     <th style="width: 100px;">ADD/DELETE</th>
                                 </tr>
                             </thead>
@@ -126,6 +127,7 @@
                                     <td id="product-img"><img width="200px" height="200px" src="Public/image/<?= $item['product_image'];?>" alt="" srcset=""></td>
                                     <td><span class="label">Hết hàng</span> </td>
                                     <td><?= $item['cate_name'];?></td>
+                                    <td><?= $item['size_number'];?></td>
                                     <td>
                                         <div class="form-group">
                                         <a href="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=edit&product_id=<?= $item['product_id']?>"><button class="btn btn-primary" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">

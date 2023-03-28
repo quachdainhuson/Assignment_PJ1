@@ -18,8 +18,8 @@
     <div id="container">
         
         <div id="header">
-            <div class="../../Public/image_logo">
-                <a href=""><img src="../../Public/image/store-giay.png" alt="" id="logo"></a>  
+            <div class="Public/image_logo">
+                <a href=""><img src="Public/image/store-giay.png" alt="" id="logo"></a>  
             </div>
                 
             <ul id="menu-categories-1">
@@ -79,7 +79,7 @@
 	<div class = "row" >
         <div class="col-3">
             <div class = "frame col-xs-6">
-			    <img src = "../../Public/image/banner-1.jpg">
+			    <img src = "Public/image/banner-1.jpg">
                 <div class = "details">
                     <h1>CONVERSE</h1>
                     <p>CHUCK 70S</p>
@@ -88,7 +88,7 @@
         </div>
         <div class="col-3">
             <div class = "frame col-xs-6">
-                <img src = "../../Public/image/banner-2.jpg">
+                <img src = "Public/image/banner-2.jpg">
                 <div class = "details">
                     <h1>CONVERSE</h1>
                     <p>CLASSIC</p>
@@ -97,7 +97,7 @@
         </div>
         <div class="col-3">
             <div class = "frame col-xs-6">
-			<img src = "../../Public/image/banner-3.jpg">
+			<img src = "Public/image/banner-3.jpg">
 			<div class = "details">
 				<h1>CONVERSE</h1>
 				<p>HOT SALE</p>
@@ -106,7 +106,7 @@
         </div>	
         <div class="col-3">
             <div class = "frame col-xs-6">
-                <img src = "../../Public/image/banner-4.jpg">
+                <img src = "Public/image/banner-4.jpg">
             </div>
         </div>
 	</div>
@@ -124,9 +124,9 @@
                 <li><a href="">SIZE GUIDE</a></li>
                 <li><a href="">CÁCH CHECK CODE</a></li>
                 <br>
-                <li><a href=""><img src="../Public/image/fb.png" alt="" width="35px" height="35px"> FACEBOOK</i></a></li>
-                <li><a href=""><img src="../Public/image/instagram.png" alt="" width="35px" height="35px"> INSTAGRAM</a></li>
-                <li><a href=""><img src="../Public/image/shopee.jpg" alt="" width="35px" height="35px">SHOPPE</a></li>
+                <li><a href=""><img src="Public/image/fb.png" alt="" width="35px" height="35px"> FACEBOOK</i></a></li>
+                <li><a href=""><img src="Public/image/instagram.png" alt="" width="35px" height="35px"> INSTAGRAM</a></li>
+                <li><a href=""><img src="Public/image/shopee.jpg" alt="" width="35px" height="35px">SHOPPE</a></li>
             
             </ul>
         </div>

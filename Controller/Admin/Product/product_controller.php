@@ -5,6 +5,7 @@
             require_once('View/Admin/product/product.php');
             break;
         case 'create': 
+            require_once('Model/Admin/product/product_model.php');
             require_once('View/Admin/product/add_product.php');
             break;
         case 'store': 

@@ -29,19 +29,10 @@
         include_once('Config/close_connect.php');
     
         $values = array(); // tạo một mảng rỗng để lưu giá trị
-    
-        while ($row = mysqli_fetch_assoc($query_1)) {
-            $values['categories'][] = $row; // thêm dữ liệu từ bảng categories vào mảng $values
-        }
-        while ($row = mysqli_fetch_assoc($query_2)) {
-            $values['color'][] = $row; 
-        }
-        while ($row = mysqli_fetch_assoc($query_3)) {
-            $values['size'][] = $row; 
-        }
-        while ($row = mysqli_fetch_assoc($query_4)) {
-            $values['style'][] = $row; 
-        }
+        $values['categories'] = $query_1; 
+        $values['color'] = $query_2;
+        $values['size'] = $query_3;
+        $values['style'] = $query_4;
         return $values;
     }
     function store(){

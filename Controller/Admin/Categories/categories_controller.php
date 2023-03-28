@@ -9,20 +9,20 @@
             require_once('View/Admin/categories/add_categories.php');
             break;
         case 'store': 
-        require_once('Model/Admin/categories/categories_model.php');
-        header('location: index.php?controller='.$controller.'&redirect='.$redirect.'');
+            require_once('Model/Admin/categories/categories_model.php');
+            header('location: index.php?controller='.$controller.'&redirect='.$redirect.'');
             break;
         case 'edit': 
-        require_once('Model/Admin/categories/categories_model.php');
-        require_once('View/Admin/categories/edit_categories.php');
+            require_once('Model/Admin/categories/categories_model.php');
+            require_once('View/Admin/categories/edit_categories.php');
             break;
         case 'update': 
-        require_once('Model/Admin/categories/categories_model.php');
-        header('location: index.php?controller='.$controller.'&redirect='.$redirect.'');
+            require_once('Model/Admin/categories/categories_model.php');
+            header('location: index.php?controller='.$controller.'&redirect='.$redirect.'');
             break;
         case 'destroy': 
-        require_once('Model/Admin/categories/categories_model.php');
-        header('location: index.php?controller='.$controller.'&redirect='.$redirect.'');
+            require_once('Model/Admin/categories/categories_model.php');
+            header('location: index.php?controller='.$controller.'&redirect='.$redirect.'');
             break;
     }
 ?>
