@@ -10,7 +10,7 @@ switch($action) {
         require_once('Model/login/login_model.php');
         if(isset($check)) {
             header('location: index.php?controller=admin');
-        } else{
+        }else{
             
             include_once('View/login_logout/login.php');
         }

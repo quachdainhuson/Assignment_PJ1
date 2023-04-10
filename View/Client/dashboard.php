@@ -33,7 +33,7 @@
                     <div class="product-top">
                         <a href="?redirect=product_detail&product_id=<?=$item['product_id'];?>" class="product-thumb">
                             <img src="Public/image/<?=$item['product_image']?>" alt="">
-                            <img class="img-change" src="Public/image/prd-1.png" alt="">
+                            <img class="img-change" src="" alt="">
                         </a>
                         <a href="?redirect=product_detail&product_id=<?=$item['product_id'];?>" class="buy-now">MUA NGAY</a>
                     </div>
@@ -78,4 +78,40 @@
                 }
             ?>
         </ul>
+    </div>
+    <div class = "center">
+	<div class = "row" >
+        <div class="col-3">
+            <div class = "frame col-xs-6">
+			    <img src = "Public/image/banner-1.jpg">
+                <div class = "details">
+                    <h1>CONVERSE</h1>
+                    <p>CHUCK 70S</p>
+                </div>
+		    </div>
+        </div>
+        <div class="col-3">
+            <div class = "frame col-xs-6">
+                <img src = "Public/image/banner-2.jpg">
+                <div class = "details">
+                    <h1>CONVERSE</h1>
+                    <p>CLASSIC</p>
+                </div>
+		    </div>
+        </div>
+        <div class="col-3">
+            <div class = "frame col-xs-6">
+			<img src = "Public/image/banner-3.jpg">
+			<div class = "details">
+				<h1>CONVERSE</h1>
+				<p>HOT SALE</p>
+			</div>
+		</div>
+        </div>	
+        <div class="col-3">
+            <div class = "frame col-xs-6">
+                <img src = "Public/image/banner-4.jpg">
+            </div>
+        </div>
+	</div>
     </div>

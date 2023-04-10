@@ -207,6 +207,9 @@ ul.products li .product-info a{
     margin-top: 13px;
     margin-right: 10px;
 }
+span #content_prd_name {
+    font-size: 5px;
+}
 .content_prd_sale a{
     text-decoration: none;
     color: #000;
@@ -225,3 +228,4 @@ ul.products li .product-info a{
 .slide_bar_choose_color li{
     margin-top: 10px;
 }
+

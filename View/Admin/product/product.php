@@ -121,7 +121,7 @@
                                     foreach( $record as $item){ 
                                 ?>
                                 <tr>
-                                    <th scope="row"><?= $item['product_id'];?></th>
+                                    <th scope="row"><?= $stt;?></th>
                                     <td><?= $item['product_name'];?></td>
                                     <td><?= $item['product_price'];?> VND</td>
                                     <td id="product-img"><img width="200px" height="200px" src="Public/image/<?= $item['product_image'];?>" alt="" srcset=""></td>

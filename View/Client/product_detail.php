@@ -10,7 +10,7 @@
                 <!-- Full-width images with number text -->
                 <div class="mySlides">
                   <div class="numbertext">1 / 6</div>
-                    <img src="Public/image/1970s-den-1.png" style="width:90%">
+                    <img src="Public/image/<?= $item['product_image'];?>" style="width:90%">
                 </div>
               
                 <div class="mySlides">
@@ -20,11 +20,11 @@
               
                 <div class="mySlides">
                   <div class="numbertext">3 / 6</div>
-                    <img src="Public/image/3-8-600x600.jpg" style="width:90%">
+                    <img src="Public/image/<?= $item['product_image'];?>" style="width:90%">
                 </div>
                 <div class="mySlides">
                     <div class="numbertext">4 / 6</div>
-                      <img src="Public/image/3-8-600x600.jpg" style="width:90%">
+                      <img src="Public/image/<?= $item['product_image'];?>" style="width:90%">
                   </div>
               
                 
@@ -41,7 +41,7 @@
                 <!-- Thumbnail images -->
                 <div class="row" id="slide_show">
                   <div class="column">
-                    <img class="demo cursor" src="Public/image/1970s-den-1.png" style="width:80%" onclick="currentSlide(1)" >
+                    <img class="demo cursor" src="Public/image/<?= $item['product_image'];?>" style="width:80%" onclick="currentSlide(1)" >
                   </div>
                   <div class="column">
                     <img class="demo cursor" src="Public/image/2-8-600x600.jpg" style="width:80%" onclick="currentSlide(2)" >
@@ -74,11 +74,19 @@
                 }
               ?>
             </select>
+            <?php
+                if($item['quantity'] == 0) {
+                    echo '<li class="text-danger">Hết hàng</li>';
+                }else {
+                    echo '<li id="status">Còn hàng</li>';
+                }
+                ?>
             <div class="quantity">
               <input type="button" value="-" class="minus">
               <input type="number" step="1" min="0" max="9999" value="1" class="quantity-input">
               <input type="button" value="+" class="plus">
-              <button id="add_to_cart">THÊM VÀO GIỎ</button>
+              
+              <button  id="add_to_cart"><a href="index.php?redirect=cart&action=add&product_id=<?= $item['product_id']; ?>" style="text-decoration: none; color:white;">THÊM VÀO GIỎ</a> </button>
             </div>
             <p><strong>Mã SP:</strong> N/A</p>
             <p><strong>Thể Loại:</strong>Converse</p>
@@ -93,8 +101,8 @@
           <div class="product-item">
               <div class="product-top">
                   <a href="" class="product-thumb">
-                      <img src="../Public/image/prd-2.jpg" alt="">
-                      <img class="img-change" src="../Public/image/prd-1.png" alt="">
+                      <img src="Public/image/prd-2.jpg" alt="">
+                      <img class="img-change" src="Public/image/prd-1.png" alt="">
                   </a>
                   <a href="#" class="buy-now">MUA NGAY</a>
               </div>
@@ -109,8 +117,8 @@
           <div class="product-item">
               <div class="product-top">
                   <a href="" class="product-thumb">
-                      <img src="../Public/image/prd-2.jpg" alt="">
-                      <img class="img-change" src="../Public/image/prd-1.png" alt="">
+                      <img src="Public/image/prd-2.jpg" alt="">
+                      <img class="img-change" src="Public/image/prd-1.png" alt="">
                   </a>
                   <a href="#" class="buy-now">MUA NGAY</a>
               </div>
@@ -125,8 +133,8 @@
           <div class="product-item">
               <div class="product-top">
                   <a href="" class="product-thumb">
-                      <img src="../Public/image/prd-2.jpg" alt="">
-                      <img class="img-change" src="../Public/image/prd-1.png" alt="">
+                      <img src="Public/image/prd-2.jpg" alt="">
+                      <img class="img-change" src="Public/image/prd-1.png" alt="">
                   </a>
                   <a href="#" class="buy-now">MUA NGAY</a>
               </div>
@@ -141,8 +149,8 @@
           <div class="product-item">
               <div class="product-top">
                   <a href="" class="product-thumb">
-                      <img src="../Public/image/prd-2.jpg" alt="">
-                      <img class="img-change" src="../Public/image/prd-1.png" alt="">
+                      <img src="Public/image/prd-2.jpg" alt="">
+                      <img class="img-change" src="Public/image/prd-1.png" alt="">
                   </a>
                   <a href="#" class="buy-now">MUA NGAY</a>
               </div>
@@ -159,7 +167,7 @@
     
 </div>
 
-<script src="../Public/js/js.js"></script>
+<script src="Public/js/js.js"></script>
 
 </body>
 
