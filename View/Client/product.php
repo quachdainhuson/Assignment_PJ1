@@ -4,31 +4,26 @@
 
     <div class="row">
         <div class="col-2" id="slide_bar">
-            <h5>DANH MỤC SẢN PHẨM</h5>
-            <ul class="slide_bar_categories">
-                <li><a href="">CONVERSE</a></li>
-                <li><a href=""> HOT</a></li>
-                <li><a href="">VANS</a></li>
-            </ul>
-            <br><br>
+            
             <h5>DÁNG GIÀY</h5>
             <ul class="slide_bar_shoe_shape">
                 <?php
                     foreach($arr['style'] as $item){
                 ?>
-                <li><a href=""><?=$item['style_name']?></a></li>
+                <li><a href="?redirect=style&action=style&style_id=<?=$item['style_id'];?>"><?=$item['style_name']?></a></li>
                 
                 <?php }?>
             </ul>
             <br><br>
             <h5>CHỌN THEO MÀU</h5>
             <ul class="slide_bar_choose_color">
-                <li><a href=""><span style="background-color: black;"></span> ĐEN</a></li>
-                <li><a href=""><span style="background-color: #EFE7DC;"></span> TRẮNG NGÀ</a></li>
-                <li><a href=""><span style="background-color: #DBAC1E;"></span> VÀNG</a></li>  
+                <?php
+                    foreach($arr['color'] as $item){
+                ?>
+                <li><a href="?redirect=color&action=color&color_id=<?=$item['color_id'];?>"><?=$item['color_name']?></a></li>
+                <?php }?>
             </ul>
             <br><br>
-            <h5>LỌC THEO GIÁ</h5>
             <h5>SẢN PHẨM HOT</h6>
             <?php
                     foreach($arr['product_hot'] as $item){
@@ -59,7 +54,7 @@
             <ul class="products">
                 <?php
                     foreach($arr['product'] as $item){
-
+                    
                     
                 ?>
                 <li>

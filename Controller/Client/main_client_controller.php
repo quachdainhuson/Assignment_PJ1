@@ -27,6 +27,16 @@
             require_once('View/Client/index.php');
             require_once('View/Client/product.php');
             break;
+        case 'style': 
+            require_once('Model/Client/product_model.php');
+            require_once('View/Client/index.php');
+            require_once('View/Client/product.php');
+            break;
+        case 'color': 
+            require_once('Model/Client/product_model.php');
+            require_once('View/Client/index.php');
+            require_once('View/Client/product.php');
+            break;    
         case 'cart': 
             require_once('Controller/Client/Cart/cart_controller.php');
             require_once('View/Client/index.php');

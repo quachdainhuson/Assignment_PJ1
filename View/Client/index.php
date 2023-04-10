@@ -75,6 +75,12 @@
                 case 'cart': 
                     include_once('View/Client/cart.php');
                     break;
+                case 'style': 
+                    include_once('View/Client/product.php');
+                    break;
+                case 'color': 
+                    include_once('View/Client/product.php');
+                    break; 
             }
             
         }else{
