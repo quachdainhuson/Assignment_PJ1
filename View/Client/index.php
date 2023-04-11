@@ -42,7 +42,12 @@
         <div class="icon-menu">
             <!-- <input type="text" id="search_bar"> -->
             <a href=""></a><i class="fa-sharp fa-solid fa-magnifying-glass" style="color: white;"></i></a>
-            <a href=""><i class="fa-regular fa-user" style="color: white;"></i></a>
+            <a href="?controller=login&action=login"><i class="fa-regular fa-user" style="color: white;"></i></a>
+            <?php
+                if(isset($_SESSION['user_level'])){
+                    echo '<a href="?controller=login&action=logout"><i class="fa-solid fa-right-from-bracket" style="color: white;"></i></a>';
+                }
+            ?>
             <a href="?redirect=cart"><i class="fa-sharp fa-solid fa-cart-shopping" style="color: white;"></i></a>
             <a href="?redirect=cart" id="price">0/0đ</a>
         </div>
@@ -146,10 +151,5 @@
     </div>
 </div>    
 </body>
-
-    
-    
-    
-    
 
 </html>
