@@ -32,7 +32,11 @@
                 ?>
             <div class="product_sale">
                 <div class="pic-prd-sale">
-                    <img src="Public/image/<?=$item['product_image'];?>"  alt="" style="padding-right: 7px">
+                    <img src="Public/image/<?php 
+                                                        $list_img = explode(',',$item['product_image']);
+                                                        $main_pic = $list_img[0];
+                                                        echo $main_pic;
+                                                    ?>"  alt="" style="padding-right: 7px">
                     <div class="content_prd_sale">
                         <a href="?redirect=product_detail&product_id=<?=$item['product_id'];?>">
                             <span id="content_prd_name" style="font-size: 13px"><?=$item['product_name'];?></span>
@@ -61,7 +65,11 @@
                     <div class="product-item">
                         <div class="product-top">
                             <a href="?redirect=product_detail&product_id=<?=$item['product_id'];?>" class="product-thumb">
-                                <img src="Public/image/<?=$item['product_image'];?>" alt="">
+                                <img src="Public/image/<?php 
+                                                        $list_img = explode(',',$item['product_image']);
+                                                        $main_pic = $list_img[0];
+                                                        echo $main_pic;
+                                                    ?>" alt="">
                                 <img class="img-change" src="" alt="">
                             </a>
                             <a href="product_detail.html" class="buy-now">MUA NGAY</a>

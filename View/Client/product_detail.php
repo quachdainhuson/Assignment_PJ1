@@ -1,5 +1,5 @@
 <?php
-    foreach($arr['product'] as $item){
+    foreach($arr['prd_detail'] as $item){
 
     
 ?>
@@ -10,21 +10,37 @@
                 <!-- Full-width images with number text -->
                 <div class="mySlides">
                   <div class="numbertext">1 / 6</div>
-                    <img src="Public/image/<?= $item['product_image'];?>" style="width:90%">
+                    <img src="Public/image/<?php 
+                                                        $list_img = explode(',',$item['product_image']);
+                                                        $main_pic = $list_img[0];
+                                                        echo $main_pic;
+                                                    ?>" style="width:90%">
                 </div>
               
                 <div class="mySlides">
                   <div class="numbertext">2 / 6</div>
-                    <img src="Public/image/2-8-600x600.jpg" style="width:90%">
+                    <img src="Public/image/<?php 
+                                                        $list_img = explode(',',$item['product_image']);
+                                                        $main_pic = $list_img[1];
+                                                        echo $main_pic;
+                                                    ?>" style="width:90%">
                 </div>
               
                 <div class="mySlides">
                   <div class="numbertext">3 / 6</div>
-                    <img src="Public/image/<?= $item['product_image'];?>" style="width:90%">
+                    <img src="Public/image/<?php 
+                                                        $list_img = explode(',',$item['product_image']);
+                                                        $main_pic = $list_img[2];
+                                                        echo $main_pic;
+                                                    ?>" style="width:90%">
                 </div>
                 <div class="mySlides">
                     <div class="numbertext">4 / 6</div>
-                      <img src="Public/image/<?= $item['product_image'];?>" style="width:90%">
+                      <img src="Public/image/<?php 
+                                                        $list_img = explode(',',$item['product_image']);
+                                                        $main_pic = $list_img[3];
+                                                        echo $main_pic;
+                                                    ?>" style="width:90%">
                   </div>
               
                 
@@ -41,16 +57,32 @@
                 <!-- Thumbnail images -->
                 <div class="row" id="slide_show">
                   <div class="column">
-                    <img class="demo cursor" src="Public/image/<?= $item['product_image'];?>" style="width:80%" onclick="currentSlide(1)" >
+                    <img class="demo cursor" src="Public/image/<?php 
+                                                        $list_img = explode(',',$item['product_image']);
+                                                        $main_pic = $list_img[0];
+                                                        echo $main_pic;
+                                                    ?>" style="width:80%" onclick="currentSlide(1)" >
                   </div>
                   <div class="column">
-                    <img class="demo cursor" src="Public/image/2-8-600x600.jpg" style="width:80%" onclick="currentSlide(2)" >
+                    <img class="demo cursor" src="Public/image/<?php 
+                                                        $list_img = explode(',',$item['product_image']);
+                                                        $main_pic = $list_img[1];
+                                                        echo $main_pic;
+                                                    ?>" style="width:80%" onclick="currentSlide(2)" >
                   </div>
                   <div class="column">
-                    <img class="demo cursor" src="Public/image/3-8-600x600.jpg" style="width:80%" onclick="currentSlide(3)" >
+                    <img class="demo cursor" src="Public/image/<?php 
+                                                        $list_img = explode(',',$item['product_image']);
+                                                        $main_pic = $list_img[2];
+                                                        echo $main_pic;
+                                                    ?>" style="width:80%" onclick="currentSlide(3)" >
                   </div>
                   <div class="column">
-                    <img class="demo cursor" src="Public/image/3-8-600x600.jpg" style="width:80%" onclick="currentSlide(4)" >
+                    <img class="demo cursor" src="Public/image/<?php 
+                                                        $list_img = explode(',',$item['product_image']);
+                                                        $main_pic = $list_img[3];
+                                                        echo $main_pic;
+                                                    ?>" style="width:80%" onclick="currentSlide(4)" >
                   </div>
                   
                 </div>
@@ -65,22 +97,24 @@
             <select name="size_id" id="pa_size">
               <option value="1">Chọn một tùy chọn</option>
               <?php
-                foreach($arr['size'] as $size){
+                foreach($arr['prd_detail'] as $prd_detail){
                     
                 
               ?>
-              <option value="<?= $size['size_id']?>"><?= $size['size_number']?></option>
+              <option value="<?= $prd_detail['size_id']?>"><?= $prd_detail['size_number']?>
+                    <?php
+                        if($prd_detail['so_luong'] == 0){
+                            echo $err = '<li class="text-danger">Hết hàng</li>';
+                        }else{
+                            echo $all = '<li id="status">Còn hàng</li>';
+                        }
+                    ?>
+            </option>
               <?php
                 }
               ?>
             </select>
-            <?php
-                if($item['quantity'] == 0) {
-                    echo '<li class="text-danger">Hết hàng</li>';
-                }else {
-                    echo '<li id="status">Còn hàng</li>';
-                }
-                ?>
+            
             <div class="quantity">
               <input type="button" value="-" class="minus">
               <input type="number" step="1" min="0" max="9999" value="1" class="quantity-input">

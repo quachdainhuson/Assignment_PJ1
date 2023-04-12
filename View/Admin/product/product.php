@@ -118,16 +118,28 @@
                             <tbody>
                                 <?php 
                                     $stt = 1;
-                                    foreach( $record as $item){ 
+                                    foreach( $arr['product'] as $item){ 
                                 ?>
                                 <tr>
                                     <th scope="row"><?= $stt;?></th>
                                     <td><?= $item['product_name'];?></td>
                                     <td><?= $item['product_price'];?> VND</td>
-                                    <td id="product-img"><img width="200px" height="200px" src="Public/image/<?= $item['product_image'];?>" alt="" srcset=""></td>
+                                    <td id="product-img"><img width="200px" height="200px" src="Public/image/<?php 
+                                                        $list_img = explode(',',$item['product_image']);
+                                                        $main_pic = $list_img[0];
+                                                        echo $main_pic;
+                                                    ?>" alt="" srcset=""></td>
                                     <td><span class="label">Hết hàng</span> </td>
                                     <td><?= $item['cate_name'];?></td>
-                                    <td><?= $item['size_number'];?></td>
+                                    <td>
+                                        <?php
+                                            foreach($arr['prd_detail'] as $prd_detail){
+                                                if($item['product_id'] == $prd_detail['product_id']){
+                                                    echo $prd_detail['size_number'] .' ,';
+                                                }
+                                            }
+                                        ?>
+                                    </td>
                                     <td>
                                         <div class="form-group">
                                         <a href="?controller=<?= $controller ?>&redirect=<?= $redirect ?>&action=edit&product_id=<?= $item['product_id']?>"><button class="btn btn-primary" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">

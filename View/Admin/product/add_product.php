@@ -96,7 +96,7 @@
                     <div class="col-4" style = "padding-left: 50px; float: left;" >
                         <br>
                         <br>
-                        <input type="file" name="product_image" id="product_image" onchange="preview()">
+                        <input type="file" multiple name="product_image[]" id="product_image" onchange="preview()" multiple>
                         <img id="frame" src="image/no-img.png" width="300px" height="400px"/>
                     </div>
                     <div class="col-8" style="padding-left: 50px; float: right;">
@@ -132,19 +132,16 @@
                                     </div>
 
                                     
-                                    
                                     <div class="form-group">
                                         <label>Size</label>
-                                        <select name="size_id" class="form-control">
-                                        <?php 
-                                            foreach($values['size'] as $size){
-                                        ?>
-                                            <option value="<?= $size['size_id'];?>"><?= $size['size_number'];?></option>
-                                            <?php
-                                        }?>
-                                        </select>
+                                    <?php
+                                    foreach($values['size'] as $size){
+                                    ?>
+                                        <label for="quantity_<?php echo $size['size_number']; ?>"><?php echo $size['size_number']; ?>:</label>
+                                        <input type="number" name="<?php echo $size['size_number']; ?>" id="quantity_<?php echo $size['size_id']; ?>" min="0" value="0" required><br>
+                                    <?php 
+                                    } ?>
                                     </div>
-                                    
                                     
                                     <div class="form-group">
                                         <label>Màu Sắc</label>

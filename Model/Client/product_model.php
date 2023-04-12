@@ -6,12 +6,19 @@
         $cate = mysqli_query($connect, "SELECT * FROM categories ORDER BY cate_id ASC");
         $sql = "SELECT * FROM product WHERE product_id = '$id'";
         $query = mysqli_query($connect, $sql);
+        $sql_2 = "SELECT prd_detail.*, product.*, size.* 
+        FROM prd_detail 
+        INNER JOIN product ON prd_detail.product_id = product.product_id
+        INNER JOIN size ON prd_detail.size_id = size.size_id
+        WHERE product.product_id = '$id'";
+        $query_2 = mysqli_query($connect, $sql_2);
         $size = "SELECT * FROM size";
         $query_size = mysqli_query($connect, $size);
         include_once('Config/close_connect.php');
         $arr = array();
         $arr['categories'] = $cate;
         $arr['product'] = $query;
+        $arr['prd_detail'] = $query_2;
         $arr['size'] = $query_size;
         return $arr;
     }

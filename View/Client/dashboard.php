@@ -32,8 +32,16 @@
                 <div class="product-item">
                     <div class="product-top">
                         <a href="?redirect=product_detail&product_id=<?=$item['product_id'];?>" class="product-thumb">
-                            <img src="Public/image/<?=$item['product_image']?>" alt="">
-                            <img class="img-change" src="" alt="">
+                            <img src="Public/image/<?php 
+                                                        $list_img = explode(',',$item['product_image']);
+                                                        $main_pic = $list_img[1];
+                                                        echo $main_pic;
+                                                    ?>" alt="">
+                            <img class="img-change" src="Public/image/<?php 
+                                                        $list_img = explode(',',$item['product_image']);
+                                                        $main_pic = $list_img[0];
+                                                        echo $main_pic;
+                                                    ?>" alt="">
                         </a>
                         <a href="?redirect=product_detail&product_id=<?=$item['product_id'];?>" class="buy-now">MUA NGAY</a>
                     </div>
@@ -62,8 +70,16 @@
                 <div class="product-item">
                     <div class="product-top">
                         <a href="?redirect=product_detail&product_id=<?=$item['product_id'];?>" class="product-thumb">
-                            <img src="Public/image/<?=$item['product_image']?>" alt="">
-                            <img class="img-change" src="Public/image/prd-1.png" alt="">
+                        <img src="Public/image/<?php 
+                                                        $list_img = explode(',',$item['product_image']);
+                                                        $main_pic = $list_img[1];
+                                                        echo $main_pic;
+                                                    ?>" alt="">
+                            <img class="img-change" src="Public/image/<?php 
+                                                        $list_img = explode(',',$item['product_image']);
+                                                        $main_pic = $list_img[0];
+                                                        echo $main_pic;
+                                                    ?>" alt="">
                         </a>
                         <a href="?redirect=product_detail&product_id=<?=$item['product_id'];?>" class="buy-now">MUA NGAY</a>
                     </div>

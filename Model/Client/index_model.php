@@ -6,11 +6,9 @@
         $sql_prd_featured = "SELECT product.*, 
         categories.*,
         color.*,
-        style.*,
-        size.*
+        style.*
         FROM  product 
         INNER JOIN categories ON product.cate_id = categories.cate_id
-        INNER JOIN size ON product.size_id = size.size_id
         INNER JOIN style ON product.style_id = style.style_id
         INNER JOIN color ON product.color_id = color.color_id WHERE product_featured = 1 ORDER BY product_id DESC LIMIT 8";
         $query_prd_featured = mysqli_query($connect, $sql_prd_featured);

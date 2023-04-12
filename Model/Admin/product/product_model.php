@@ -1,20 +1,28 @@
- <?php
+<?php
     function index(){
         include_once('Config/connect.php');
         $sql = "SELECT product.*, 
         categories.*,
         color.*,
-        style.*,
-        size.*
+        style.*
+        -- ,size.*
         FROM  product 
         INNER JOIN categories ON product.cate_id = categories.cate_id
-        INNER JOIN size ON product.size_id = size.size_id
+        -- INNER JOIN size ON product.size_id = size.size_id
         INNER JOIN style ON product.style_id = style.style_id
         INNER JOIN color ON product.color_id = color.color_id
         ";
         $query = mysqli_query($connect,$sql); 
+        $sql_2 = "SELECT prd_detail.*, product.*, size.* 
+        FROM prd_detail 
+        INNER JOIN product ON prd_detail.product_id = product.product_id
+        INNER JOIN size ON prd_detail.size_id = size.size_id";
+        $query_2 = mysqli_query($connect,$sql_2); 
         include_once('Config/close_connect.php');
-        return $query;
+        $arr = array();
+        $arr['product'] = $query;
+        $arr['prd_detail'] = $query_2;
+        return $arr;
     }
     function create(){
         include_once('Config/connect.php');
@@ -45,17 +53,34 @@
         }else{
             $featured = 0;
         }
-        $cate = $_POST['cate_id'];
-        $size = $_POST['size_id'];
+        $cate = $_POST["cate_id"];
         $color = $_POST['color_id'];
         $style = $_POST['style_id'];
-        $image = $_FILES['product_image']['name'];
-        $file_tmp = $_FILES['product_image']['tmp_name'];
-        $sql_product = "INSERT INTO product (product_name, product_price, product_description, product_featured, product_image, cate_id, color_id, style_id, size_id)
-        VALUES ('$name', $price, '$description', $featured, '$image',$cate, $color, $style, $size )
-        ";
+        $product_images = array();
+        foreach ($_FILES['product_image']['tmp_name'] as $key => $tmp_name) {
+            $image_name = $_FILES['product_image']['name'][$key];
+            $image_tmp = $_FILES['product_image']['tmp_name'][$key];
+            move_uploaded_file($image_tmp, "Public/image/".$image_name);
+            $product_images[] = $image_name;
+        }
+        // Chuyển đổi mảng đường dẫn ảnh thành chuỗi
+        $prd_image_string = implode(',', $product_images);
+        // Thực hiện lưu sản phẩm vào database
+        $sql_product = "INSERT INTO product (product_name, product_price, product_description, product_featured, product_image, cate_id, color_id, style_id)
+        VALUES ('$name', $price, '$description', $featured, '$prd_image_string',$cate, $color, $style)";
         mysqli_query($connect, $sql_product);
-        move_uploaded_file($file_tmp, 'Public/image/'.$image);
+        $product_id = mysqli_insert_id($connect);
+        $sql = "SELECT * FROM size";
+        $result = mysqli_query($connect, $sql);
+        while ($row = mysqli_fetch_assoc($result)) {
+        $size_id = $row['size_id'];
+        $size_name = $row['size_number'];
+        $quantity = $_POST[$size_name];
+
+        // Thêm thông tin chi tiết sản phẩm cho từng kích thước
+        $sql_size = "INSERT INTO prd_detail (product_id, size_id, so_luong) VALUES ('$product_id', '$size_id', '$quantity')";
+        mysqli_query($connect, $sql_size);
+}
         include_once('Config/close_connect.php');
         
     }
@@ -65,11 +90,9 @@
         $sql_1 = "SELECT product.*, 
         categories.*,
         color.*,
-        style.*,
-        size.*
+        style.*
         FROM  product 
         INNER JOIN categories ON product.cate_id = categories.cate_id
-        INNER JOIN size ON product.size_id = size.size_id
         INNER JOIN style ON product.style_id = style.style_id
         INNER JOIN color ON product.color_id = color.color_id WHERE product_id = '$id'
         ";
@@ -82,26 +105,26 @@
         $query_4 = mysqli_query($connect, $sql_4);
         $sql_5 = "SELECT * FROM style";
         $query_5 = mysqli_query($connect, $sql_5);
-        while ($row = mysqli_fetch_assoc($query_1)) {
-            $values['product'][] = $row; // thêm dữ liệu từ bảng categories vào mảng $values
-        }
-        while ($row = mysqli_fetch_assoc($query_2)) {
-            $values['categories'][] = $row; // thêm dữ liệu từ bảng categories vào mảng $values
-        }
-        while ($row = mysqli_fetch_assoc($query_3)) {
-            $values['color'][] = $row; 
-        }
-        while ($row = mysqli_fetch_assoc($query_4)) {
-            $values['size'][] = $row; 
-        }
-        while ($row = mysqli_fetch_assoc($query_5)) {
-            $values['style'][] = $row; 
-        }
+
+        $sql_6 = "SELECT prd_detail.*, product.*, size.* 
+        FROM prd_detail 
+        INNER JOIN product ON prd_detail.product_id = product.product_id
+        INNER JOIN size ON prd_detail.size_id = size.size_id
+        WHERE product.product_id = '$id'";
+        $query_6 = mysqli_query($connect, $sql_6);
+        $values = array();
+        $values['product'] = $query_1; 
+        $values['categories'] = $query_2; 
+        $values['color'] = $query_3; 
+        $values['size'] = $query_4; 
+        $values['style'] = $query_5; 
+        $values['prd_detail'] = $query_6; 
         return $values;
     }
     function destroy(){
         $id = $_GET['product_id'];
         include_once('Config/connect.php');
+        mysqli_query($connect, "DELETE FROM prd_detail WHERE product_id = '$id'");
         mysqli_query($connect, "DELETE FROM product WHERE product_id = '$id'");
         include_once('Config/close_connect.php');
     }
@@ -119,7 +142,6 @@
             $featured = 0;
         }
         $cate = $_POST['cate_id'];
-        $size = $_POST['size_id'];
         $color = $_POST['color_id'];
         $style = $_POST['style_id'];
         $arr = mysqli_fetch_array(mysqli_query($connect, "SELECT product_image FROM product WHERE product_id = '$id'"));
@@ -139,14 +161,28 @@
         product_image = '$image', 
         cate_id = $cate, 
         color_id = $color, 
-        style_id =  $style, 
-        size_id = $size WHERE product_id = '$id'
+        style_id =  $style
+        WHERE product_id = '$id'
         ";
         mysqli_query($connect, $sql_product);
+        $id = $_POST['product_id'];
+        $size = $_POST['quantity'];
+        
+        foreach($size as $size_id => $quantity){
+        $sql_product_detail =  "UPDATE prd_detail SET so_luong = $quantity WHERE size_id = '$size_id' AND product_id = '$id' ";
+        mysqli_query($connect, $sql_product_detail);
+            
+           
+           }
+            
+            
+           
+            
+        
         include_once('Config/close_connect.php');
     }
     switch($action){
-        case '': $record = index(); break;
+        case '': $arr = index(); break;
         case 'create': $values = create(); break;
         case 'store': store(); break;
         case 'edit': $values = edit(); break;

@@ -149,15 +149,20 @@
                                     
                                     
                                     <div class="form-group">
+
+                                    <?php
+                                    foreach($values['prd_detail'] as $size){
+                                        
+                                    ?>  
+                                        
+                                        
                                         <label>Size</label>
-                                        <select name="size_id" class="form-control">
-                                        <?php 
-                                            foreach($values['size'] as $size){
-                                        ?>
-                                                <option <?php if($product['size_id'] == $size['size_id']){echo 'selected';}?> value="<?php echo $size['size_id'];?>"><?php echo $size['size_number'];?></option>
-                                            <?php
-                                        }?>
-                                        </select>
+                                        <label for="<?=$size['size_id']; ?>"><?php echo $size['size_number']; ?>:</label>
+                                        <input type="hidden" name="size_id" value="<?= $size['size_id'];?>">
+                                        <input type="hidden" name="size_number" value="<?= $size['size_number'];?>">
+                                        <input type="number" name="quantity[<?php echo $size['size_id']; ?>]" id="<?php echo $size['size_id']; ?>" min="0" value="<?php echo $size['so_luong']; ?>" required><br>
+                                    <?php 
+                                    } ?>
                                     </div>
                                     
                                     

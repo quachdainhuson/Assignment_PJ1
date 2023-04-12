@@ -8,7 +8,6 @@ function checklogin() {
     $count = mysqli_query($connect, $sql);
     $count_1 = mysqli_num_rows(mysqli_query($connect, $sql));
     if($count_1 == 0) {
-
         return 0;
     }else {
         //login đúng
