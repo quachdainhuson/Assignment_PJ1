@@ -95,12 +95,9 @@
             <p><?= $item['product_description'];?></p>
             <label for="pa_size">Size:</label>
             <select name="size_id" id="pa_size">
-              <option value="1">Chọn một tùy chọn</option>
-              
+              <option value="0">Chọn một tùy chọn</option>
               <?php
-                foreach($arr['prd_detail'] as $prd_detail){
-                    
-                
+                foreach($arr['prd_detail'] as $prd_detail){   
               ?>
               <option value="<?= $prd_detail['size_id']?>"><?= $prd_detail['size_number']?>
                     <?php
@@ -109,7 +106,7 @@
                         }else{
                             echo $all = '<li id="status">Còn hàng</li>';
                         }
-                    ?>
+                    ?>      
             </option>
               <?php
                 }
@@ -121,7 +118,7 @@
               <input type="number" step="1" min="0" max="9999" value="1" class="quantity-input">
               <input type="button" value="+" class="plus">
               </div> -->
-              <button  id="add_to_cart"><a href="?redirect=cart&action=add&product_id=<?= $item['product_id']; ?>&size_id=<?=$item['size_id'];?>" style="text-decoration: none; color:white;">THÊM VÀO GIỎ</a> </button>
+              <button  id="add_to_cart"><a href="" style="text-decoration: none; color:white;">THÊM VÀO GIỎ</a> </button>
             
             <p><strong>Mã SP:</strong> N/A</p>
             <p><strong>Thể Loại:</strong>Converse</p>
@@ -201,7 +198,7 @@
     
     
 </div>
-
+<script src="Public/js/cart.js"></script>
 <script src="Public/js/js.js"></script>
 
 </body>

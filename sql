@@ -17,3 +17,5 @@ SELECT prd_detail.prd_detail_id,product.product_name, size.size_id, size.size_nu
 FROM product 
 INNER JOIN prd_detail ON prd_detail.product_id = product.product_id
 INNER JOIN size ON size.size_id = prd_detail.size_id WHERE product.product_id = 9
+
+?redirect=cart&action=add&product_id=<?= $item['product_id']; ?>&size_id=<?=$item['size_id'];?>
