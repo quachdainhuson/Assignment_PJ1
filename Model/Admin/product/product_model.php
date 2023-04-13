@@ -63,9 +63,7 @@
             move_uploaded_file($image_tmp, "Public/image/".$image_name);
             $product_images[] = $image_name;
         }
-        // Chuyển đổi mảng đường dẫn ảnh thành chuỗi
         $prd_image_string = implode(',', $product_images);
-        // Thực hiện lưu sản phẩm vào database
         $sql_product = "INSERT INTO product (product_name, product_price, product_description, product_featured, product_image, cate_id, color_id, style_id)
         VALUES ('$name', $price, '$description', $featured, '$prd_image_string',$cate, $color, $style)";
         mysqli_query($connect, $sql_product);
@@ -73,14 +71,12 @@
         $sql = "SELECT * FROM size";
         $result = mysqli_query($connect, $sql);
         while ($row = mysqli_fetch_assoc($result)) {
-        $size_id = $row['size_id'];
-        $size_name = $row['size_number'];
-        $quantity = $_POST[$size_name];
-
-        // Thêm thông tin chi tiết sản phẩm cho từng kích thước
-        $sql_size = "INSERT INTO prd_detail (product_id, size_id, so_luong) VALUES ('$product_id', '$size_id', '$quantity')";
+            $size_id = $row['size_id'];
+            $size_name = $row['size_number'];
+            $quantity = $_POST[$size_name];
+            $sql_size = "INSERT INTO prd_detail (product_id, size_id, so_luong) VALUES ('$product_id', '$size_id', '$quantity')";
         mysqli_query($connect, $sql_size);
-}
+        }
         include_once('Config/close_connect.php');
         
     }

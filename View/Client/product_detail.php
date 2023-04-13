@@ -91,11 +91,12 @@
         </div>
         <div class="col-md-7">
             <h4 id="prd_detail_title"><?= $item['product_name'];?></h4>
-            <p id="prd_detail_price"><span id="price_prd"><?= $item['product_price'];?></span> <span id="id_prd">Mã SP: N/A</span></p>
+            <p id="prd_detail_price"><span id="price_prd"><?= number_format($item['product_price']);?>đ</span> <span id="id_prd">Mã SP: N/A</span></p>
             <p><?= $item['product_description'];?></p>
             <label for="pa_size">Size:</label>
             <select name="size_id" id="pa_size">
               <option value="1">Chọn một tùy chọn</option>
+              
               <?php
                 foreach($arr['prd_detail'] as $prd_detail){
                     
@@ -115,13 +116,13 @@
               ?>
             </select>
             
-            <div class="quantity">
+            <!-- <div class="quantity">
               <input type="button" value="-" class="minus">
               <input type="number" step="1" min="0" max="9999" value="1" class="quantity-input">
               <input type="button" value="+" class="plus">
-              
-              <button  id="add_to_cart"><a href="index.php?redirect=cart&action=add&product_id=<?= $item['product_id']; ?>" style="text-decoration: none; color:white;">THÊM VÀO GIỎ</a> </button>
-            </div>
+              </div> -->
+              <button  id="add_to_cart"><a href="?redirect=cart&action=add&product_id=<?= $item['product_id']; ?>&size_id=<?=$item['size_id'];?>" style="text-decoration: none; color:white;">THÊM VÀO GIỎ</a> </button>
+            
             <p><strong>Mã SP:</strong> N/A</p>
             <p><strong>Thể Loại:</strong>Converse</p>
             <p><strong>Từ Khóa:</strong> Classic</p>

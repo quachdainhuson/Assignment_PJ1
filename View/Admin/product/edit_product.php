@@ -154,8 +154,6 @@
                                     foreach($values['prd_detail'] as $size){
                                         
                                     ?>  
-                                        
-                                        
                                         <label>Size</label>
                                         <label for="<?=$size['size_id']; ?>"><?php echo $size['size_number']; ?>:</label>
                                         <input type="hidden" name="size_id" value="<?= $size['size_id'];?>">

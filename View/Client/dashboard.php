@@ -48,7 +48,7 @@
                         <div class="product-info">
                             <a href="?redirect=product_detail&product_id=<?=$item['product_id'];?>" class="product-cat"><?= $item['cate_name'];?></a>
                             <a href="?redirect=product_detail&product_id=<?=$item['product_id'];?>" class="product-name"><?= $item['product_name'];?></a>
-                            <div class="product-price"><?= $item['product_price'];?>đ</div>
+                            <div class="product-price"><?= number_format($item['product_price']);?>đ</div>
                         </div>
                 </div>
             </li>
@@ -86,7 +86,7 @@
                         <div class="product-info">
                             <a href="?redirect=product_detail&product_id=<?=$item['product_id'];?>" class="product-cat"><?= $item['cate_name'];?></a>
                             <a href="?redirect=product_detail&product_id=<?=$item['product_id'];?>" class="product-name"><?= $item['product_name'];?></a>
-                            <div class="product-price"><?= $item['product_price'];?>đ</div>
+                            <div class="product-price"><?= number_format($item['product_price']);?>đ</div>
                         </div>
                 </div>
             </li>

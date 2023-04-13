@@ -39,7 +39,6 @@
             break;    
         case 'cart': 
             require_once('Controller/Client/Cart/cart_controller.php');
-            require_once('View/Client/index.php');
             require_once('View/Client/cart.php');
             break;
     }

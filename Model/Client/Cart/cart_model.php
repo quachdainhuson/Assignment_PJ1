@@ -1,5 +1,5 @@
 <?php
-    
+
     function view_cart() {
         $arr = array();
         $temp = array();
@@ -8,7 +8,11 @@
         if(isset($_SESSION['cart'])) {
             foreach($_SESSION['cart'] as $prd_id => $value) {
                 // Tìm bản ghi cần thêm vào giỏ hàng
-                $sqlTemp = "SELECT * FROM product WHERE product_id = '$prd_id'";
+                $sqlTemp = "SELECT prd_detail.*, product.*, size.* 
+                FROM prd_detail
+                INNER JOIN product ON product.product_id = prd_detail.product_id
+                INNER JOIN size ON prd_detail.size_id = size.size_id
+                WHERE product.product_id = '$prd_id' ";
                 $resultTemp = mysqli_query($connect, $sqlTemp);
                 if(isset($resultTemp)){
                     // Lặp mảng để lấy ra chi tiết từng bản ghi
@@ -16,7 +20,8 @@
                         $temp[$prd_id]['product_name'] = $each['product_name'];
                         $temp[$prd_id]['product_price'] = $each['product_price'];
                         $temp[$prd_id]['product_image'] = $each['product_image'];
-                        $temp[$prd_id]['quantity'] = $each['quantity'];
+                        $temp[$prd_id]['size_number'] = $each['size_number'];
+                        $temp[$prd_id]['so_luong'] = $each['so_luong'];
                         $temp[$prd_id]['amount'] = $value;
                     }
                 }
@@ -24,12 +29,13 @@
         }
         // 
         include_once('Config/close_connect.php');
-        $arr['product'] = $temp;
+        $arr['prd_detail'] = $temp;
         $arr['categories'] = $cate;
         return $arr;
     }
     function add_cart() {
         $prd_id = $_GET['product_id'];
+        
         if(isset($_SESSION['cart'])){
             if(isset($_SESSION['cart'][$prd_id])) {
                 $_SESSION['cart'][$prd_id]++;
@@ -59,8 +65,8 @@
             unset($_SESSION['cart']);
         }
     }
-    switch($redirect) {
-    case 'cart': $arr = view_cart(); break;
+    switch($action) {
+    case '': $arr = view_cart(); break;
     case 'add': add_cart(); break;
     case 'update': update_cart(); break;
     case 'del': del_cart(); break;
