@@ -97,7 +97,7 @@
                         <br>
                         <br>
                         <input type="file" multiple name="product_image[]" id="product_image" onchange="preview()" multiple>
-                        <img id="frame" src="image/no-img.png" width="300px" height="400px"/>
+                        <img id="frame" src="image/no-img.png" width="300px" height="300px"/>
                     </div>
                     <div class="col-8" style="padding-left: 50px; float: right;">
                         <br><br><br><br>
@@ -133,12 +133,13 @@
 
                                     
                                     <div class="form-group">
-                                        <label>Size</label>
+                                        <label>Số Lượng Từng Kích Cỡ</label><br>
                                     <?php
                                     foreach($values['size'] as $size){
                                     ?>
+                                        <label>Size</label>
                                         <label for="quantity_<?php echo $size['size_number']; ?>"><?php echo $size['size_number']; ?>:</label>
-                                        <input type="number" name="<?php echo $size['size_number']; ?>" id="quantity_<?php echo $size['size_id']; ?>" min="0" value="0" required><br>
+                                        <input type="number" name="<?php echo $size['size_number']; ?>" id="quantity_<?php echo $size['size_id']; ?>" min="0" value="0" required style="width: 50px;"><br>
                                     <?php 
                                     } ?>
                                     </div>

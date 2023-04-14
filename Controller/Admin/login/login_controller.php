@@ -8,7 +8,7 @@ switch($action) {
             include_once('View/login_logout/login.php'); break;
     case 'checklogin' :
         require_once('Model/login/login_model.php');
-        if(isset($check)) {
+        if($check == 1) {
             if($_SESSION['user_level'] == 1){
                 header('location: index.php?controller=admin');
             }else{
