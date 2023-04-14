@@ -19,5 +19,9 @@ switch($action) {
         require_once('Model/Client/Cart/cart_model.php');
         header('Location:index.php?redirect=cart');
         break;
+    case 'checkaccess' : // Thanh toán mua hàng
+        require_once('Model/Client/Cart/cart_model.php');
+        header('Location:index.php');
+        break;
 }
 ?>

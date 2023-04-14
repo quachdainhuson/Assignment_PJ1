@@ -32,6 +32,13 @@ switch($controller) {
                             header('location: ?controller=login&action=login');
                         }
                         ; break;
+                    case 'receipt' : 
+                        if(isset($_SESSION['user']) && isset($_SESSION['pass'])) {
+                            require_once('Controller/Admin/receipt/receipt_controller.php');
+                        }else{
+                            header('location: ?controller=login&action=login');
+                        }
+                        ; break;    
                 }
             }else {
                 require_once('View/Admin/index.php');

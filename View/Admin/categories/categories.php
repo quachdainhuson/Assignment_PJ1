@@ -85,7 +85,7 @@
                         </svg> Quản Lý Danh Mục
                     </a>
                     </a>
-                    <a href="receipt.html" class="list-group-item list-group-item-action "><svg
+                    <a href="?controller=admin&redirect=receipt" class="list-group-item list-group-item-action "><svg
                             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-cart2" viewBox="0 0 16 16">
                             <path

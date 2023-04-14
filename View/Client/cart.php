@@ -1,4 +1,8 @@
-   
+  <script>
+        function buyNow() {
+        document.getElementById('buy-now').submit();
+    }
+    </script> 
 
    
    <h4 id="title-2">GIỎ HÀNG</h4>
@@ -58,7 +62,7 @@
                     </div>
                     <div class="col-2"></div>
                     <div class="by-now col-3">
-                        <a href="order.html">
+                        <a href="#" onClick="buyNow()">
                             <b>Thanh toán ngay</b>
                         </a>
                     </div>
@@ -76,32 +80,28 @@
   <div class="container">
     <div class="row">
         <div class="infocustomer col-6">
-            <form method="post">
+            <form method="post" id="buy-now" action="?redirect=cart&action=checkaccess">
                 <div class="row">
                     <h3>THÔNG TIN THANH TOÁN</h3>
                     <div id="customer-name" class="col-12">
                         <label>Họ tên</label>
-                        <input type="text" name="name"
-                            class="form-control" required>
+                        <input type="text" name="customer_name" class="form-control" required>
                     </div>
                     <div id="customer-phone" class="col-12">
                         <label>Số điện thoại</label>
-                        <input type="text" name="phone"
-                            class="form-control" required>
+                        <input type="text" name="phone_number" class="form-control" required>
                     </div>
                     <div id="customer-mail" class="col-12">
                         <label>Địa chỉ email</label>
-                        <input type="text" name="mail" class="form-control"
-                            required>
+                        <input type="text" name="customer_email" class="form-control" required>
                     </div>
                     <div id="customer-add" class="col-12">
                         <label>Địa chỉ</label>
-                        <input type="text" name="add" class="form-control" required>
+                        <input type="text" name="customer_address" class="form-control" required>
                     </div>
-    
                     <div class="form-group">
                         <label>Ghi chú</label>
-                        <textarea required name="detail_product" class="form-control" rows="3"></textarea>
+                        <textarea name="customer_note" class="form-control" rows="3"></textarea>
                     </div>
     
                 </div>
