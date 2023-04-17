@@ -24,6 +24,6 @@
     }
     switch($redirect){
         case '': $arr = index(); break;
-        case 'product_detail': $arr = index(); break;
+        // case 'product_detail': $arr = index(); break;
     }
 ?>

@@ -1,16 +1,38 @@
 <?php
     function index(){
         include_once('Config/connect.php');
+        $limit = 5;
+        $sqlTotal = "SELECT count(product_id) as total FROM product";
+        $resultTotal = mysqli_query($connect, $sqlTotal);
+        $total_records = mysqli_fetch_assoc($resultTotal)['total'];
+        $total_page = ceil($total_records / $limit);
+        if(isset($_GET['current_page'])){
+            $current_page = $_GET['current_page'];
+        }else{
+            $current_page = 1; // Truong hop khong co thong tin trang tren duong dan thi mang dinh se tro ve trang 1
+        }
+        // Truong hop bam nut tro ve trang truoc o trang 1
+        if($current_page < 1){
+            $current_page = 1;
+        }
+        // Truong hop bam nut trang sau o trang cuoi cung
+        if($current_page > $total_page){
+            $current_page = $total_page;
+        }
+       
+        $start = ($current_page - 1) * $limit;
+        
+
+        
         $sql = "SELECT product.*, 
         categories.*,
         color.*,
         style.*
-        -- ,size.*
         FROM  product 
         INNER JOIN categories ON product.cate_id = categories.cate_id
-        -- INNER JOIN size ON product.size_id = size.size_id
         INNER JOIN style ON product.style_id = style.style_id
         INNER JOIN color ON product.color_id = color.color_id
+        ORDER BY product.product_id ASC LIMIT $start, $limit
         ";
         $query = mysqli_query($connect,$sql); 
         $sql_2 = "SELECT prd_detail.*, product.*, size.* 
@@ -22,7 +44,11 @@
         $arr = array();
         $arr['product'] = $query;
         $arr['prd_detail'] = $query_2;
+        $arr['current_page'] = $current_page;
+        $arr['total_pages'] = $total_page;
+
         return $arr;
+        
     }
     function create(){
         include_once('Config/connect.php');
@@ -165,16 +191,10 @@
         $size = $_POST['quantity'];
         
         foreach($size as $size_id => $quantity){
-        $sql_product_detail =  "UPDATE prd_detail SET so_luong = $quantity WHERE size_id = '$size_id' AND product_id = '$id' ";
-        mysqli_query($connect, $sql_product_detail);
-            
-           
-           }
-            
-            
-           
-            
-        
+            $sql_product_detail =  "UPDATE prd_detail SET so_luong = $quantity WHERE size_id = '$size_id' AND product_id = '$id' ";
+            mysqli_query($connect, $sql_product_detail);
+            }
+ 
         include_once('Config/close_connect.php');
     }
     switch($action){

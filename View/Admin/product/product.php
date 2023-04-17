@@ -121,7 +121,7 @@
                                     foreach( $arr['product'] as $item){ 
                                 ?>
                                 <tr>
-                                    <th scope="row"><?= $stt;?></th>
+                                    <th scope="row"><?= $item['product_id'];?></th>
                                     <td><?= $item['product_name'];?></td>
                                     <td><?= $item['product_price'];?> VND</td>
                                     <td id="product-img"><img width="200px" height="200px" src="Public/image/<?php 
@@ -163,7 +163,45 @@
                             
                             </tbody>
                         </table>
-                        
+                        <div class="panel-footer">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+                                <?php
+                                    if($arr['current_page'] > 1 && $arr['total_pages'] > 1){
+                                        $prev = $arr['current_page'] - 1;
+                                        echo '<li class="page-item">
+                                                <a class="page-link" href="?controller=admin&redirect=product&current_page='.$prev.'">&laquo;</a>
+                                            </li>';
+                                    }
+
+                                ?>
+                                <?php
+                                // foreach($arr['total_pages'] as $total_page){
+                                //     foreach($arr['current_page'] as $current_page){
+                                    for($i = 1; $i < $arr['total_pages']; $i++){
+                                        if($i == $arr['current_page']){
+                                            echo '<li class="page-item active "><a class="page-link" >'.$i.'</a></li>';
+
+                                        }else{
+                                            echo '<li class="page-item"><a class="page-link" href="?controller=admin&redirect=product&current_page='.$i.'">'.$i.'</a></li>';
+                                        }
+                                    }
+                            //     }
+
+                            // }
+                                ?>
+                                <?php
+                                
+                                    if($arr['current_page'] < $arr['total_pages'] && $arr['total_pages'] > 1){
+                                        $next = $arr['current_page'] + 1;
+                                        echo '<li class="page-item"><a class="page-link" href="?controller=admin&redirect=product&current_page='.$next.'">&raquo;</a></li>';
+                                    }
+                               
+                                ?>   
+                            
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -98,17 +98,14 @@
               <option value="0">Chọn một tùy chọn</option>
               <?php
                 foreach($arr['prd_detail'] as $prd_detail){   
+                    if($prd_detail['so_luong'] != 0){
               ?>
+              
               <option value="<?= $prd_detail['size_id']?>"><?= $prd_detail['size_number']?>
-                    <?php
-                        if($prd_detail['so_luong'] == 0){
-                            echo $err = '<li class="text-danger">Hết hàng</li>';
-                        }else{
-                            echo $all = '<li id="status">Còn hàng</li>';
-                        }
-                    ?>      
+                        
             </option>
               <?php
+                    }
                 }
               ?>
             </select>
@@ -118,8 +115,9 @@
               <input type="number" step="1" min="0" max="9999" value="1" class="quantity-input">
               <input type="button" value="+" class="plus">
               </div> -->
+              
               <button  id="add_to_cart"><a href="" style="text-decoration: none; color:white;">THÊM VÀO GIỎ</a> </button>
-            
+              
             <p><strong>Mã SP:</strong> N/A</p>
             <p><strong>Thể Loại:</strong>Converse</p>
             <p><strong>Từ Khóa:</strong> Classic</p>
