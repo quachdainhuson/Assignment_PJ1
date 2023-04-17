@@ -21,7 +21,7 @@
 
 <div class="header-bar">
             <div id="name-store">
-                <a href=""></a>Phone Store</a>
+                <a href=""></a>Shoes Store</a>
             </div>
             <ul class="nav justify-content-end" style="margin-top: -40px;">
                 <li class="nav-item dropdown">

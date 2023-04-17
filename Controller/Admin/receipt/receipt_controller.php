@@ -6,7 +6,7 @@
             break;
         case 'detail': 
             require_once('Model/Admin/receipt/receipt_model.php');
-            require_once('View/Admin/receipt/edit_receipt.php');
+            require_once('View/Admin/receipt/receipt_detail.php');
             break;
         case 'update': 
             require_once('Model/Admin/receipt/receipt_model.php');

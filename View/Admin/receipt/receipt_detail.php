@@ -89,13 +89,9 @@
                     </ol>
                 </nav>
                 <div class="title-product">
-                    <strong style="font-size: 75px; margin-left: 20px;">Đơn Hàng</strong>
+                    <strong style="font-size: 75px; margin-left: 20px;">Chi Tiết Đơn Hàng</strong>
                     <br>
-                    <div id="toolbar" class="btn-group" style="margin-left: 20px;">
-                        <a href="add-product.php" class="btn btn-success">
-                            <i class="glyphicon glyphicon-plus"></i> Thêm Đơn Hàng
-                        </a>
-                    </div>
+                    
                 </div>
 
             <br>
@@ -107,46 +103,58 @@
                             <thead>
                                 <tr>
                                     <th scope="col">STT</th>
-                                    <th scope="col">Khách Hàng</th>
-                                    <th scope="col">Điện Thoại</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Địa Chỉ</th>
-                                    <th scope="col">Tổng Tiền</th>
+                                    <th scope="col">Sản Phẩm</th>
+                                    <th scope="col">Kích Cỡ</th>
+                                    <th scope="col">Giá </th>
+                                    <th scope="col">Số Lượng</th>
+                                    <th scope="col">Tổng Giá</th>
                                     <th scope="col">Tình Trạng</th>
                                     <th scope="col">Ngày Mua</th>
-                                    <th style="width: 100px;">Chi Tiết Đơn Hàng</th>
                                 </tr>
                             </thead>
                             
                                 <?php
                                 $stt = 1;
-                                    foreach($arr['order'] as $values){
+                                    foreach($arr['order_detail'] as $values){
 
                                     
                                 ?>
                                 <tbody>
                                 <tr>
                                     <td scope="col"><?=$stt;?></td>
-                                    <td scope="col"><?=$values['customer_name'];?></td>
-                                    <td scope="col">0<?=$values['phone_number'];?></td>
-                                    <td scope="col"><?=$values['customer_email'];?></td>
-                                    <td scope="col"><?=$values['customer_address'];?></td>
-                                    <td scope="col"><?=$values['total_price'];?></td>
+                                    <td scope="col"><?=$values['product_name'];?></td>
+                                    <td scope="col"><?=$values['size_number'];?></td>
+                                    <td scope="col"><?=$values['product_price'];?></td>
+                                    <td scope="col"><?=$values['quantity'];?></td>
+                                    <td scope="col"><?php
+                                        $price = $values['product_price'] * $values['quantity'];
+                                        echo $price;
+                                    ?></td>
                                     <th scope="col" style="color:green"><?php
                                         if($values['status'] == 1){
                                             echo 'Chưa Xác Nhận';
                                         }
                                     ?></th>
                                     <td scope="col"><?=$values['date_buy'];?></td>
-                                    <td class="form-group">
-                                        <a href="?controller=admin&redirect=receipt&action=detail&order_id=<?=$values['order_id'];?>"><button class="btn btn-primary" type="submit">Chi Tiết</button></a>
-                                    </td>
+                                    
                                 </tr>
                                 </tbody>
                                 <?php
                                  $stt++;
                                     }
                                 ?>
+                                <tbody>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col"> </th>
+                                    <th scope="col">Tổng Giá:</th>
+                                    <th scope="col"><?=$values['total_price'];?></th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </tbody>
                             
                             
                         </table>
