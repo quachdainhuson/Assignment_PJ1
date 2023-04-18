@@ -11,6 +11,13 @@ switch($controller) {
         if(isset($_SESSION['user']) && isset($_SESSION['pass'])) {
             if(isset($_GET['redirect'])) {
                 switch($redirect) {
+                    case 'dashboard' : 
+                        if(isset($_SESSION['user']) && isset($_SESSION['pass'])) {
+                            require_once('Controller/Admin/dashboard/dashboard_controller.php');
+                        }else{
+                            header('location: ?controller=login&action=login');
+                        }
+                        ; break;
                     case 'user' : 
                         if(isset($_SESSION['user']) && isset($_SESSION['pass'])) {
                             require_once('Controller/Admin/user/user_controller.php');
@@ -41,7 +48,8 @@ switch($controller) {
                         ; break;    
                 }
             }else {
-                require_once('View/Admin/index.php');
+                
+                header('location: ?controller=admin&redirect=dashboard');
             }
             
             

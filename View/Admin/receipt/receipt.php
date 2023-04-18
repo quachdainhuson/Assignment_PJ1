@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Public/css/admin.css">
+    <link rel="stylesheet" href="Public/font/fontawesome-free-6.3.0-web/css/all.min.css">
     <style>
 
     </style>
@@ -91,30 +92,24 @@
                 <div class="title-product">
                     <strong style="font-size: 75px; margin-left: 20px;">Đơn Hàng</strong>
                     <br>
-                    <div id="toolbar" class="btn-group" style="margin-left: 20px;">
-                        <a href="add-product.php" class="btn btn-success">
-                            <i class="glyphicon glyphicon-plus"></i> Thêm Đơn Hàng
-                        </a>
-                    </div>
+                    
                 </div>
 
             <br>
             <div class="row">
                 <div class="col-lg-11">
                     <div class="panel panel-default">
-
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th scope="col">STT</th>
-                                    <th scope="col">Khách Hàng</th>
-                                    <th scope="col">Điện Thoại</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Địa Chỉ</th>
-                                    <th scope="col">Tổng Tiền</th>
-                                    <th scope="col">Tình Trạng</th>
-                                    <th scope="col">Ngày Mua</th>
-                                    <th style="width: 100px;">Chi Tiết Đơn Hàng</th>
+                                    <th  width="7%" scope="col">Mã ĐH</th>
+                                    <th  width="18%" scope="col">Khách Hàng</th>
+                                    <th  width="10%" scope="col">Điện Thoại</th>
+                                    <th  width="10%" scope="col">Tổng Tiền</th>
+                                    <th  width="10%"  scope="col">Tình Trạng</th>
+                                    <th  width="12%" scope="col">Ngày Mua</th>
+                                    <th  width="8%" scope="col">Chi Tiết Đơn Hàng</th>
+                                    <th  width="25%" scope="col">Sửa Trạng Thái</th>
                                 </tr>
                             </thead>
                             
@@ -126,20 +121,31 @@
                                 ?>
                                 <tbody>
                                 <tr>
-                                    <td scope="col"><?=$stt;?></td>
+                                    <td scope="col"><?=$values['order_id'];?></td>
                                     <td scope="col"><?=$values['customer_name'];?></td>
                                     <td scope="col">0<?=$values['phone_number'];?></td>
-                                    <td scope="col"><?=$values['customer_email'];?></td>
-                                    <td scope="col"><?=$values['customer_address'];?></td>
                                     <td scope="col"><?=$values['total_price'];?></td>
+                                    <p style="color:red;"></p>
                                     <th scope="col" style="color:green"><?php
-                                        if($values['status'] == 1){
-                                            echo 'Chưa Xác Nhận';
+                                        if($values['status'] == 0){
+                                            echo '<p style="color:red;">Chưa Xác Nhận</p>';
+                                        }if($values['status'] == 1){
+                                            echo '<p style="color:orange;">Đã Xác Nhận</p>';
+                                        }if($values['status'] == 2){
+                                            echo '<p  style="color:blue;">Đang Giao Hàng</p>';
+                                        }if($values['status'] == 3){
+                                            echo '<p>Đã Giao Hàng</p>';
                                         }
                                     ?></th>
                                     <td scope="col"><?=$values['date_buy'];?></td>
-                                    <td class="form-group">
+                                    <td scope="col">
                                         <a href="?controller=admin&redirect=receipt&action=detail&order_id=<?=$values['order_id'];?>"><button class="btn btn-primary" type="submit">Chi Tiết</button></a>
+                                    </td>
+                                    <td scope="col">
+                                        <a href="?controller=admin&redirect=receipt&action=unconfirm&order_id=<?=$values['order_id'];?>"><button class="btn btn-primary" type="submit"><i class="fa-regular fa-cart-circle-check"></i></button></a>
+                                        <a href="?controller=admin&redirect=receipt&action=confirm&order_id=<?=$values['order_id'];?>"><button class="btn btn-primary" type="submit"><i class="fa-regular fa-square-check"></i></button></a>
+                                        <a href="?controller=admin&redirect=receipt&action=delivery&order_id=<?=$values['order_id'];?>"><button class="btn btn-primary" type="submit"><i class="fa-solid fa-truck"></i></button></a>
+                                        <a href="?controller=admin&redirect=receipt&action=delivered&order_id=<?=$values['order_id'];?>"><button class="btn btn-primary" type="submit"><i class="fa-sharp fa-regular fa-cart-circle-check"></i></button></a>
                                     </td>
                                 </tr>
                                 </tbody>

@@ -96,6 +96,24 @@
 
             <br>
             <div class="row">
+                <div class="col-5" style="margin-left: 40px;">
+                    <ul class="list-group list-group-flush">
+                    <?php
+                        foreach($arr['customer'] as $values){   
+                    ?>
+                        <li class="list-group-item">Tên Khách Hàng: <?=$values['customer_name']?></li>
+                        <li class="list-group-item">Số Điện Thoại: <?=$values['phone_number']?></li>
+                        <li class="list-group-item">Email: <?=$values['customer_email']?></li>
+                        <li class="list-group-item">Địa Chỉ: <?=$values['customer_address']?></li>
+                        <li class="list-group-item">Ghi Chú: <?=$values['customer_note']?></li>
+                    <?php
+                        }
+                    ?>
+                    </ul>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
                 <div class="col-lg-11">
                     <div class="panel panel-default">
 
@@ -104,11 +122,11 @@
                                 <tr>
                                     <th scope="col">STT</th>
                                     <th scope="col">Sản Phẩm</th>
+                                    <th scope="col">Hình Ảnh</th>
                                     <th scope="col">Kích Cỡ</th>
                                     <th scope="col">Giá </th>
                                     <th scope="col">Số Lượng</th>
                                     <th scope="col">Tổng Giá</th>
-                                    <th scope="col">Tình Trạng</th>
                                     <th scope="col">Ngày Mua</th>
                                 </tr>
                             </thead>
@@ -123,6 +141,7 @@
                                 <tr>
                                     <td scope="col"><?=$stt;?></td>
                                     <td scope="col"><?=$values['product_name'];?></td>
+                                    <td scope="col"><?=$values['product_name'];?></td>
                                     <td scope="col"><?=$values['size_number'];?></td>
                                     <td scope="col"><?=$values['product_price'];?></td>
                                     <td scope="col"><?=$values['quantity'];?></td>
@@ -130,11 +149,6 @@
                                         $price = $values['product_price'] * $values['quantity'];
                                         echo $price;
                                     ?></td>
-                                    <th scope="col" style="color:green"><?php
-                                        if($values['status'] == 1){
-                                            echo 'Chưa Xác Nhận';
-                                        }
-                                    ?></th>
                                     <td scope="col"><?=$values['date_buy'];?></td>
                                     
                                 </tr>
@@ -150,7 +164,7 @@
                                     <th scope="col"></th>
                                     <th scope="col"> </th>
                                     <th scope="col">Tổng Giá:</th>
-                                    <th scope="col"><?=$values['total_price'];?></th>
+                                    <th scope="col" style="color: red;"><?=$values['total_price'];?></th>
                                     <th scope="col"></th>
                                     <th scope="col"></th>
                                 </tr>

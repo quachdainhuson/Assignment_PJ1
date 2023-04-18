@@ -75,7 +75,7 @@
                                                     ?>" alt="">
                                 <img class="img-change" src="" alt="">
                             </a>
-                            <a href="product_detail.html" class="buy-now">MUA NGAY</a>
+                            <a href="product_detail.html" class="buy-now">XEM NGAY</a>
                         </div>
                             <div class="product-info">
                                 <a href="?redirect=product_detail&product_id=<?=$item['product_id'];?>" class="product-cat"><?=$item['cate_name'];?></a>

@@ -51,7 +51,7 @@
             </div>
             <div class="categories">
                 <div class="list-group">
-                <a href="?controller=admin" class="list-group-item list-group-item-action  active">
+                <a href="?controller=admin&redirect=dashboard" class="list-group-item list-group-item-action  active">
                         <svg xmlns="http://www.w3.org/2000/svg " width="16 " height="16 " fill="currentColor " class="bi bi-speedometer " viewBox="0 0 16 16 ">
                             <path d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2zM3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8zm9.5
                             0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.389.389 0 0 0-.029-.518z "/>
@@ -89,35 +89,65 @@
                     <li class="breadcrumb-item active" aria-current="page">Dash Board</li>
                 </ol>
             </nav>
-            <div class="row" style="margin-left: 40px;">
-                <div class="col-xs-12 col-md-6 col-lg-3">
-                    <div class="panel panel-blue panel-widget ">
-                        <div class="row no-padding" style="border-radius: 20px;">
-                            <div class="col-sm-3 col-lg-5 widget-left" style="background-color: blue;">
-                                <img src="image/cart.png" alt="" class="cart-dashboard">
-                            </div>
-                            <div class="col-sm-9 col-lg-7 widget-right">
-                                <div class="large">12</div>
-                                <div class="text-muted">Sản Phẩm</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-md-6 col-lg-3">
-                    <div class="panel panel-teal panel-widget">
-                        <div class="row no-padding">
-                            <div class="col-sm-3 col-lg-5 widget-left" style="background-color: rgb(255, 99, 60);">
-                                <img src="image/member.png " alt=" " class="cart-dashboard ">
-                            </div>
-                            <div class="col-sm-9 col-lg-7 widget-right ">
-                            <div class="large">12</div>
-                                <div class="text-muted ">Thành Viên</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
+            <div class="row">
+			<div class="col-lg-12">
+				<h1 class="page-header">Dashboard</h1>
+			</div>
+		</div><!--/.row-->
+		
+		<div class="row">
+			<div class="col-xs-12 col-md-6 col-lg-3">
+				<div class="panel panel-blue panel-widget ">
+					<div class="row no-padding">
+						<div class="col-sm-3 col-lg-5 widget-left">
+							<img src="Public/image/shoes.png" alt="" srcset="" width="120" style="margin-left: 30px;">
+						</div>
+						<div class="col-sm-9 col-lg-7 widget-right">
+							<div class="large"><?php
+                                foreach($arr['product'] as $values){
+                                    echo $values['COUNT(product_id)'];
+                                }
+                            ?></div>
+							<div class="text-muted">Sản Phẩm</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-6 col-lg-3">
+				<div class="panel panel-teal panel-widget">
+					<div class="row no-padding">
+						<div class="col-sm-3 col-lg-5 widget-left">
+							<img src="Public/image/user.jpg" alt="" srcset="" width="120">
+						</div>
+						<div class="col-sm-9 col-lg-7 widget-right">
+                        <div class="large"><?php
+                                foreach($arr['user'] as $values){
+                                    echo $values['COUNT(user_id)'];
+                                }
+                            ?></div>
+							<div class="text-muted">Thành Viên</div>
+						</div>
+					</div>
+				</div>
+			</div>
+            <div class="col-xs-12 col-md-6 col-lg-3">
+				<div class="panel panel-teal panel-widget">
+					<div class="row no-padding">
+						<div class="col-sm-3 col-lg-5 widget-left">
+                        <img src="Public/image/cart.png" alt="" srcset="" width="150" style="margin-left: 30px;">
+						</div>
+						<div class="col-sm-9 col-lg-7 widget-right">
+                        <div class="large"><?php
+                                foreach($arr['order'] as $values){
+                                    echo $values['COUNT(order_id)'];
+                                }
+                            ?></div>
+							<div class="text-muted">Hóa Đơn</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
         </div>
 
     </div>

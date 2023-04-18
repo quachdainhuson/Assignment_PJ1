@@ -48,7 +48,7 @@
             </div>
             <div class="categories">
                 <div class="list-group">
-                <a href="?controller=admin" class="list-group-item list-group-item-action ">
+                <a href="?controller=admin&redirect=dashboard" class="list-group-item list-group-item-action ">
                         <svg xmlns="http://www.w3.org/2000/svg " width="16 " height="16 " fill="currentColor "
                             class="bi bi-speedometer " viewBox="0 0 16 16 ">
                             <path
