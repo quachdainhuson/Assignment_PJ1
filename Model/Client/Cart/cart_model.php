@@ -49,6 +49,7 @@ function view_cart() {
             $_SESSION['cart'] = array();
             $_SESSION['cart'][$prd_id][$size_id] = 1;
         }   
+        
     }
     function update_cart() {
         $quantity = $_POST['qtt'];

@@ -20,7 +20,7 @@
         case 'cate': 
             require_once('Model/Client/product_model.php');
             require_once('View/Client/index.php');
-            require_once('View/Client/product.php');
+            require_once('View/Client/categories_product.php');
             break;
         case 'product': 
             require_once('Model/Client/product_model.php');

@@ -176,9 +176,7 @@
 
                                 ?>
                                 <?php
-                                // foreach($arr['total_pages'] as $total_page){
-                                //     foreach($arr['current_page'] as $current_page){
-                                    for($i = 1; $i < $arr['total_pages']; $i++){
+                                    for($i = 1; $i < $arr['total_pages']+1; $i++){
                                         if($i == $arr['current_page']){
                                             echo '<li class="page-item active "><a class="page-link" >'.$i.'</a></li>';
 
@@ -186,9 +184,6 @@
                                             echo '<li class="page-item"><a class="page-link" href="?controller=admin&redirect=product&current_page='.$i.'">'.$i.'</a></li>';
                                         }
                                     }
-                            //     }
-
-                            // }
                                 ?>
                                 <?php
                                 
@@ -201,13 +196,13 @@
                             
                                 </ul>
                             </nav>
-                        </div>
+        </div>
                     </div>
                 </div>
             </div>
             <!--/.row-->
         </div>
-
+        
 </body>
 
 </html>
