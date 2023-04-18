@@ -123,7 +123,7 @@
                                 <tr>
                                     <th scope="row"><?= $item['product_id'];?></th>
                                     <td><?= $item['product_name'];?></td>
-                                    <td><?= $item['product_price'];?> VND</td>
+                                    <td><?= number_format($item['product_price'],0,',',',');?> VND</td>
                                     <td id="product-img"><img width="200px" height="200px" src="Public/image/<?php 
                                                         $list_img = explode(',',$item['product_image']);
                                                         $main_pic = $list_img[0];

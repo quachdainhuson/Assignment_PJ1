@@ -90,7 +90,7 @@ function view_cart() {
         $customer_email = $_POST['customer_email'];
         $customer_address = $_POST['customer_address'];
         $customer_note = $_POST['customer_note'];
-        $status = 1;
+        $status = 0;
         date_default_timezone_set('Asia/Bangkok');
         $datebuy = date('Y-m-d H:i:s');
         require_once('Config/connect.php');

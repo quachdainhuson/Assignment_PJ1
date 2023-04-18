@@ -49,7 +49,7 @@
         </div>
         <div class="categories">
             <div class="list-group">
-                <a href="dash-board.html" class="list-group-item list-group-item-action ">
+                <a href="?controller=admin" class="list-group-item list-group-item-action ">
                     <svg xmlns="http://www.w3.org/2000/svg " width="16 " height="16 " fill="currentColor " class="bi bi-speedometer " viewBox="0 0 16 16 ">
                         <path d="M8 2a.5.5 0 0 1 .5.5V4a.5.5 0 0 1-1 0V2.5A.5.5 0 0 1 8 2zM3.732 3.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 8a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 8zm9.5
                         0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 7.31A.91.91 0 1 0 8.85 8.569l3.434-4.297a.389.389 0 0 0-.029-.518z "/>
@@ -141,12 +141,16 @@
                                 <tr>
                                     <td scope="col"><?=$stt;?></td>
                                     <td scope="col"><?=$values['product_name'];?></td>
-                                    <td scope="col"><?=$values['product_name'];?></td>
+                                    <td scope="col"><img width="150px" height="150px" src="Public/image/<?php 
+                                                        $list_img = explode(',',$values['product_image']);
+                                                        $main_pic = $list_img[0];
+                                                        echo $main_pic;
+                                                    ?>" alt="" srcset=""></td>
                                     <td scope="col"><?=$values['size_number'];?></td>
                                     <td scope="col"><?=$values['product_price'];?></td>
                                     <td scope="col"><?=$values['quantity'];?></td>
                                     <td scope="col"><?php
-                                        $price = $values['product_price'] * $values['quantity'];
+                                        $price =number_format($values['product_price'] * $values['quantity'],0,',',',');
                                         echo $price;
                                     ?></td>
                                     <td scope="col"><?=$values['date_buy'];?></td>
@@ -163,9 +167,9 @@
                                     <th scope="col"></th>
                                     <th scope="col"></th>
                                     <th scope="col"> </th>
-                                    <th scope="col">Tổng Giá:</th>
-                                    <th scope="col" style="color: red;"><?=$values['total_price'];?></th>
                                     <th scope="col"></th>
+                                    <th scope="col">Tổng Giá:</th>
+                                    <th scope="col" style="color: red;"><?=number_format($values['total_price'],0,',',',');?></th>
                                     <th scope="col"></th>
                                 </tr>
                             </tbody>
