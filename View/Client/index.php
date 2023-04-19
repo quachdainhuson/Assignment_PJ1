@@ -43,8 +43,9 @@
                                        
         </div> 
         <div class="icon-menu">
-            <!-- <input type="text" id="search_bar"> -->
+            <input type="text" id="search_bar">
             <a href=""></a><i class="fa-sharp fa-solid fa-magnifying-glass" style="color: white;"></i></a>
+            
             <a href="?controller=login&action=login"><i class="fa-regular fa-user" style="color: white;"></i></a>
             <?php
                 if(isset($_SESSION['user_level'])){

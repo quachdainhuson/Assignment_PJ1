@@ -87,9 +87,9 @@ ul#menu-categories-1 li:hover:before{
 }
 
 #search_bar{
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
-    border: 1px solid white;
+    border: 1px solid rgb(255, 255, 255);
     width: 250px;
     height: 35px;
 }

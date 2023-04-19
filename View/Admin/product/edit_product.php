@@ -30,7 +30,7 @@
                 </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                        <li><a class="dropdown-item" href="?controller=login&action=logout">Logout</a></li>
 
                     </ul>
                 </li>
