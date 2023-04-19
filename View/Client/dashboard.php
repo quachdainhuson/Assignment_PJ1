@@ -31,7 +31,7 @@
             <li>
                 <div class="product-item">
                     <div class="product-top">
-                        <a href="?redirect=product_detail&product_id=<?=$item['product_id'];?>" class="product-thumb">
+                        <a href="?redirect=product_detail&action=product_detail&product_id=<?=$item['product_id'];?>" class="product-thumb">
                             <img src="Public/image/<?php 
                                                         $list_img = explode(',',$item['product_image']);
                                                         $main_pic = $list_img[1];
@@ -43,11 +43,11 @@
                                                         echo $main_pic;
                                                     ?>" alt="">
                         </a>
-                        <a href="?redirect=product_detail&product_id=<?=$item['product_id'];?>" class="buy-now">XEM NGAY</a>
+                        <a href="?redirect=product_detail&action=product_detail&product_id=<?=$item['product_id'];?>" class="buy-now">XEM NGAY</a>
                     </div>
                         <div class="product-info">
-                            <a href="?redirect=product_detail&product_id=<?=$item['product_id'];?>" class="product-cat"><?= $item['cate_name'];?></a>
-                            <a href="?redirect=product_detail&product_id=<?=$item['product_id'];?>" class="product-name"><?= $item['product_name'];?></a>
+                            <a href="?redirect=product_detail&action=product_detail&product_id=<?=$item['product_id'];?>" class="product-cat"><?= $item['cate_name'];?></a>
+                            <a href="?redirect=product_detail&action=product_detail&product_id=<?=$item['product_id'];?>" class="product-name"><?= $item['product_name'];?></a>
                             <div class="product-price"><?= number_format($item['product_price']);?>đ</div>
                         </div>
                 </div>
@@ -69,7 +69,7 @@
             <li>
                 <div class="product-item">
                     <div class="product-top">
-                        <a href="?redirect=product_detail&product_id=<?=$item['product_id'];?>" class="product-thumb">
+                        <a href="?redirect=product_detail&action=product_detail&product_id=<?=$item['product_id'];?>" class="product-thumb">
                         <img src="Public/image/<?php 
                                                         $list_img = explode(',',$item['product_image']);
                                                         $main_pic = $list_img[1];
@@ -81,11 +81,11 @@
                                                         echo $main_pic;
                                                     ?>" alt="">
                         </a>
-                        <a href="?redirect=product_detail&product_id=<?=$item['product_id'];?>" class="buy-now">XEM NGAY</a>
+                        <a href="?redirect=product_detail&action=product_detail&product_id=<?=$item['product_id'];?>" class="buy-now">XEM NGAY</a>
                     </div>
                         <div class="product-info">
-                            <a href="?redirect=product_detail&product_id=<?=$item['product_id'];?>" class="product-cat"><?= $item['cate_name'];?></a>
-                            <a href="?redirect=product_detail&product_id=<?=$item['product_id'];?>" class="product-name"><?= $item['product_name'];?></a>
+                            <a href="?redirect=product_detail&action=product_detail&product_id=<?=$item['product_id'];?>" class="product-cat"><?= $item['cate_name'];?></a>
+                            <a href="?redirect=product_detail&action=product_detail&product_id=<?=$item['product_id'];?>" class="product-name"><?= $item['product_name'];?></a>
                             <div class="product-price"><?= number_format($item['product_price']);?>đ</div>
                         </div>
                 </div>

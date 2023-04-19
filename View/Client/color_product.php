@@ -78,7 +78,7 @@
                             <a href="?redirect=product_detail&action=product_detail&product_id=<?=$item['product_id'];?>" class="buy-now">XEM NGAY</a>
                         </div>
                             <div class="product-info">
-                                <a href="?redirect=product_detail&action=product_detail&product_id=<?=$item['product_id'];?>" class="product-cat"><?=$item['cate_name'];?></a>
+                                <a href="?redirect=product_detail&action=product_detail&product_id=<?=$item['product_id'];?>" class="product-cat"><?=$item['color_name'];?></a>
                                 <a href="?redirect=product_detail&action=product_detail&product_id=<?=$item['product_id'];?>" class="product-name"><?=$item['product_name'];?></a>
                                 <div class="product-price"><?=$item['product_price'];?></div>
                             </div>
@@ -89,38 +89,38 @@
                 ?>
             </ul>
             <nav aria-label="Page navigation example">
-    <ul class="pagination">
-                                <?php
-                                    if($arr['current_page'] > 1 && $arr['total_pages'] > 1){
-                                        $prev = $arr['current_page'] - 1;
-                                        echo '<li class="page-item">
-                                                <a class="page-link" href="?redirect=cate&action=cate&cate_id='.$arr['cate_id'].'&current_page='.$prev.'">&laquo;</a>
-                                            </li>';
-                                    }
+                <ul class="pagination">
+                    <?php
+                        if($arr['current_page'] > 1 && $arr['total_pages'] > 1){
+                            $prev = $arr['current_page'] - 1;
+                            echo '<li class="page-item">
+                                    <a class="page-link" href="?redirect=color&action=color&color_id='.$arr['color_id'].'&current_page='.$prev.'">&laquo;</a>
+                                </li>';
+                        }
 
-                                ?>
-                                <?php
-                                    for($i = 1; $i < $arr['total_pages']; $i++){
-                                        if($i == $arr['current_page']){
-                                            echo '<li class="page-item active "><a class="page-link" >'.$i.'</a></li>';
+                    ?>
+                    <?php
+                        for($i = 1; $i < $arr['total_pages']; $i++){
+                            if($i == $arr['current_page']){
+                                echo '<li class="page-item active "><a class="page-link" >'.$i.'</a></li>';
 
-                                        }else{
-                                            echo '<li class="page-item"><a class="page-link" href="?redirect=cate&action=cate&cate_id='.$arr['cate_id'].'&current_page='.$i.'">'.$i.'</a></li>';
-                                        }
-                                    }
-                                ?>
-                                <?php
-                                
-                                    if($arr['current_page'] < $arr['total_pages'] && $arr['total_pages'] > 1){
-                                        $next = $arr['current_page'] + 1;
-                                        echo '<li class="page-item"><a class="page-link" href="?redirect=cate&action=cate&cate_id='.$arr['cate_id'].'&current_page='.$next.'">&raquo;</a></li>';
-                                    }
-                               
-                                ?>   
-                            
-                                </ul>
+                            }else{
+                                echo '<li class="page-item"><a class="page-link" href="?redirect=color&action=color&color_id='.$arr['color_id'].'&current_page='.$i.'">'.$i.'</a></li>';
+                            }
+                        }
+                    ?>
+                    <?php
+                                            
+                        if($arr['current_page'] < $arr['total_pages'] && $arr['total_pages'] > 1){
+                            $next = $arr['current_page'] + 1;
+                            echo '<li class="page-item"><a class="page-link" href="?redirect=color&action=color&color_id='.$arr['color_id'].'&current_page='.$next.'">&raquo;</a></li>';
+                        }
+                                        
+                    ?>   
+                                        
+                    </ul>
   
-</nav>          
+            </nav>        
         </div>
        
     </div>

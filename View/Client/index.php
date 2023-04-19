@@ -29,11 +29,11 @@
                 
             <ul id="menu-categories-1">
                 <li><a href="?">TRANG CHỦ</a></li>
-                <li><a href="?redirect=product">GIÀY</a></li>
+                <li><a href="?redirect=product&action=product">GIÀY</a></li>
                 <?php
                     foreach($arr['categories'] as $item){
                 ?>
-                <li><a href="?redirect=cate&cate_id=<?= $item['cate_id'];?>"><?=$item['cate_name'];?></a></li>
+                <li><a href="?redirect=cate&action=cate&cate_id=<?= $item['cate_id'];?>"><?=$item['cate_name'];?></a></li>
                 <?php
                     }
                 ?>
@@ -84,11 +84,14 @@
                     include_once('View/Client/cart.php');
                     break;
                 case 'style': 
-                    include_once('View/Client/product.php');
+                    include_once('View/Client/style_product.php');
                     break;
                 case 'color': 
-                    include_once('View/Client/product.php');
+                    include_once('View/Client/color_product.php');
                     break; 
+                case 'color': 
+                    include_once('View/Client/color_product.php');
+                    break;
             }
             
         }else{

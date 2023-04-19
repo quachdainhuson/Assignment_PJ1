@@ -142,10 +142,10 @@
                                         <a href="?controller=admin&redirect=receipt&action=detail&order_id=<?=$values['order_id'];?>"><button class="btn btn-primary" type="submit">Chi Tiết</button></a>
                                     </td>
                                     <td scope="col">
-                                        <a href="?controller=admin&redirect=receipt&action=unconfirm&order_id=<?=$values['order_id'];?>"><button class="btn btn-primary" type="submit"><i class="fa-regular fa-cart-circle-check"></i></button></a>
+                                        <a href="?controller=admin&redirect=receipt&action=unconfirm&order_id=<?=$values['order_id'];?>"><button class="btn btn-primary" type="submit"><i class="fa-solid fa-x"></i></button></a>
                                         <a href="?controller=admin&redirect=receipt&action=confirm&order_id=<?=$values['order_id'];?>"><button class="btn btn-primary" type="submit"><i class="fa-regular fa-square-check"></i></button></a>
                                         <a href="?controller=admin&redirect=receipt&action=delivery&order_id=<?=$values['order_id'];?>"><button class="btn btn-primary" type="submit"><i class="fa-solid fa-truck"></i></button></a>
-                                        <a href="?controller=admin&redirect=receipt&action=delivered&order_id=<?=$values['order_id'];?>"><button class="btn btn-primary" type="submit"><i class="fa-sharp fa-regular fa-cart-circle-check"></i></button></a>
+                                        <a href="?controller=admin&redirect=receipt&action=delivered&order_id=<?=$values['order_id'];?>"><button class="btn btn-primary" type="submit"><i class="fa-solid fa-box"></i></button></a>
                                     </td>
                                 </tr>
                                 </tbody>

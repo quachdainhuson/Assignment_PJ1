@@ -105,7 +105,6 @@ function view_cart() {
         $sql_order = "INSERT INTO order1 (customer_id, total_price, status, date_buy ) VALUES
                                         ('$customer_id','$total_price', $status, '$datebuy' )";
         mysqli_query($connect, $sql_order);
-
         $order_id = $connect->insert_id;
         if(isset($_SESSION['cart'])){
         foreach ($_SESSION['cart'] as $prd_id => $sizes) {
