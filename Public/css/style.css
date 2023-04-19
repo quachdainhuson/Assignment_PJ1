@@ -114,7 +114,7 @@ ul#menu-categories-1 li:hover:before{
 .icon-menu{
     float: right;
     padding-right: 30px;
-    padding-top: 10px;
+    padding-top: -10px;
 }
 .fa-sharp,.fa-regular{
     margin-left: 15px;
@@ -161,5 +161,42 @@ button#bt-nhan-ngay{
 #carouselExampleControls{
     z-index: 100;
 }
-
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search-form input[type="text"] {
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  .search-form button[type="submit"] {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: #000000;
+    color: #fff;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .search-form button[type="submit"]:hover {
+    background-color: #000000;
+  }
+  .search-form {
+    display: inline-block;
+  }
+  
+  .search-form input[type="text"] {
+    display: inline-block;
+    vertical-align: middle;
+  }
 

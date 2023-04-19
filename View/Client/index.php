@@ -17,6 +17,46 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="Public/font/fontawesome-free-6.3.0-web/css/all.min.css">
+    <style>
+        .search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search-form input[type="text"] {
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    font-size: 16px;
+  }
+  
+  .search-form button[type="submit"] {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: #000000;
+    color: #fff;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .search-form button[type="submit"]:hover {
+    background-color: #000000;
+  }
+  .search-form {
+    display: inline-block;
+  }
+  
+  .search-form input[type="text"] {
+    display: inline-block;
+    vertical-align: middle;
+  }
+    </style>
 </head>
 <body>
     <!-- HEADER -->
@@ -37,15 +77,16 @@
                 <?php
                     }
                 ?>
-                <li><a href="">HOT PRODUCT</a></li>
-                <li><a href="?redirect=intro">ABOUT US</a></li>
+                <li><a href="?redirect=product&action=product">HOT PRODUCT</a></li>
+                <li><a href="?redirect=intro&action=intro">ABOUT US</a></li>
             </ul>
                                        
         </div> 
         <div class="icon-menu">
-            <input type="text" id="search_bar">
-            <a href=""></a><i class="fa-sharp fa-solid fa-magnifying-glass" style="color: white;"></i></a>
-            
+            <form action="?redirect=search" method="POST" class="search-form">
+                 <input type="text" name="search" placeholder="Tìm kiếm..." id="search-bar">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
             <a href="?controller=login&action=login"><i class="fa-regular fa-user" style="color: white;"></i></a>
             <?php
                 if(isset($_SESSION['user_level'])){
@@ -93,6 +134,10 @@
                 case 'color': 
                     include_once('View/Client/color_product.php');
                     break;
+                case 'search': 
+                    include_once('View/Client/search_product.php');
+                    break;
+                
             }
             
         }else{

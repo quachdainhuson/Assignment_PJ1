@@ -240,7 +240,6 @@
     function intro(){
         include_once('Config/connect.php');
         $cate = mysqli_query($connect, "SELECT * FROM categories ORDER BY cate_id ASC");
-        
         include_once('Config/close_connect.php');
         $arr = array();
         $arr['categories'] = $cate;

@@ -105,11 +105,12 @@
                                     <th  width="7%" scope="col">Mã ĐH</th>
                                     <th  width="18%" scope="col">Khách Hàng</th>
                                     <th  width="10%" scope="col">Điện Thoại</th>
-                                    <th  width="10%" scope="col">Tổng Tiền</th>
+                                    <th  width="7%" scope="col">Tổng Tiền</th>
                                     <th  width="10%"  scope="col">Tình Trạng</th>
                                     <th  width="12%" scope="col">Ngày Mua</th>
                                     <th  width="8%" scope="col">Chi Tiết Đơn Hàng</th>
-                                    <th  width="25%" scope="col">Sửa Trạng Thái</th>
+                                    <th  width="15%" scope="col">Sửa Trạng Thái</th>
+                                    <th  width="10" scope="col">Lần Sửa Đổi Gần Nhất</th>
                                 </tr>
                             </thead>
                             
@@ -147,6 +148,9 @@
                                         <a href="?controller=admin&redirect=receipt&action=delivery&order_id=<?=$values['order_id'];?>"><button class="btn btn-primary" type="submit"><i class="fa-solid fa-truck"></i></button></a>
                                         <a href="?controller=admin&redirect=receipt&action=delivered&order_id=<?=$values['order_id'];?>"><button class="btn btn-primary" type="submit"><i class="fa-solid fa-box"></i></button></a>
                                     </td>
+                                    <td scope="col"><?=$values['full_name'];?>
+                                
+                                </td>
                                 </tr>
                                 </tbody>
                                 <?php

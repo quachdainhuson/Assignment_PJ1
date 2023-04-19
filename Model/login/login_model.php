@@ -15,6 +15,7 @@ function checklogin() {
         $_SESSION['pass'] = $pass;
         foreach ($count as $item){
             $_SESSION['user_level'] = $item['user_level'];
+            $_SESSION['user_id'] = $item['user_id'];
         }
         return 1;
         

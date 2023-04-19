@@ -1,9 +1,13 @@
 <?php
     function index(){
         include_once('Config/connect.php');
-        $sql_receipt = "SELECT customer.*, order1.* FROM order1 INNER JOIN customer ON customer.customer_id = order1.customer_id";
+        $sql_receipt = "SELECT customer.*, order1.*, user.*
+        FROM order1 
+        INNER JOIN customer ON customer.customer_id = order1.customer_id
+        LEFT JOIN user ON order1.user_id = user.user_id
+        "
+        ;
         $query_receipt = mysqli_query($connect, $sql_receipt);
-
         include_once('Config/close_connect.php');
         $arr = array();
         $arr['order'] = $query_receipt;
@@ -34,6 +38,12 @@
         include_once('Config/connect.php');
         $sql = "UPDATE order1 SET status = (0) WHERE order_id = '$order_id' ";
         mysqli_query($connect,$sql);
+        if(isset($_SESSION['user_id'])){
+            $user_id = $_SESSION['user_id'];
+            $sql = "UPDATE order1 SET user_id = ($user_id) WHERE order_id = '$order_id' ";
+            mysqli_query($connect,$sql);
+        }
+        
         include_once('Config/close_connect.php');
     }
     function confirm(){
@@ -41,6 +51,11 @@
         include_once('Config/connect.php');
         $sql = "UPDATE order1 SET status = (1) WHERE order_id = '$order_id' ";
         mysqli_query($connect,$sql);
+        if(isset($_SESSION['user_id'])){
+            $user_id = $_SESSION['user_id'];
+            $sql = "UPDATE order1 SET user_id = ($user_id) WHERE order_id = '$order_id' ";
+            mysqli_query($connect,$sql);
+        }
         include_once('Config/close_connect.php');
     }
     function delivery(){
@@ -48,6 +63,11 @@
         include_once('Config/connect.php');
         $sql = "UPDATE order1 SET status = (2) WHERE order_id = '$order_id' ";
         mysqli_query($connect,$sql);
+        if(isset($_SESSION['user_id'])){
+            $user_id = $_SESSION['user_id'];
+            $sql = "UPDATE order1 SET user_id = ($user_id) WHERE order_id = '$order_id' ";
+            mysqli_query($connect,$sql);
+        }
         include_once('Config/close_connect.php');
     }
     function delivered(){
@@ -55,6 +75,11 @@
         include_once('Config/connect.php');
         $sql = "UPDATE order1 SET status = (3) WHERE order_id = '$order_id' ";
         mysqli_query($connect,$sql);
+        if(isset($_SESSION['user_id'])){
+            $user_id = $_SESSION['user_id'];
+            $sql = "UPDATE order1 SET user_id = ($user_id) WHERE order_id = '$order_id' ";
+            mysqli_query($connect,$sql);
+        }
         include_once('Config/close_connect.php');
     }
     switch($action){

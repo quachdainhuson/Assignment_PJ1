@@ -20,7 +20,7 @@ switch($action) {
         ; break;
     case 'logout' : 
         session_destroy();
-        header('location: index.php?controller=admin');
+        header('location: index.php?');
         ; break;
         
 }
