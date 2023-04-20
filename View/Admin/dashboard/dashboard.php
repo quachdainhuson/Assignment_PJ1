@@ -44,11 +44,7 @@
     </div>
     <div class="container-fluit">
         <div class="slide-bar">
-            <div class="search">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                </form>
-            </div>
+            
             <div class="categories">
                 <div class="list-group">
                 <a href="?controller=admin&redirect=dashboard" class="list-group-item list-group-item-action  active">

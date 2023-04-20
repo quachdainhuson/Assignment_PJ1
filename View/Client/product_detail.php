@@ -331,7 +331,7 @@
         <li>
           <div class="product-item">
               <div class="product-top">
-                  <a href="" class="product-thumb">
+                  <a href="?redirect=product_detail&action=product_detail&product_id=<?=$item['product_id'];?>" class="product-thumb">
                   <img src="Public/image/<?php 
                                                         $list_img = explode(',',$item['product_image']);
                                                         $main_pic = $list_img[0];

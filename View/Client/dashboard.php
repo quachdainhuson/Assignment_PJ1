@@ -64,7 +64,7 @@
         </div>
         <ul class="products">
         <?php
-                foreach($arr['featured'] as $item){  
+                foreach($arr['new'] as $item){  
             ?>
             <li>
                 <div class="product-item">

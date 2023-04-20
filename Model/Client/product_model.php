@@ -19,6 +19,7 @@
         $sql_hot = "SELECT product.*, categories.*
         FROM product
                 INNER JOIN categories ON product.cate_id = categories.cate_id
+                ORDER BY RAND()
                 LIMIT 4" ;
         $query_hot = mysqli_query($connect, $sql_hot);
         include_once('Config/close_connect.php');

@@ -38,11 +38,7 @@
         </div>
     <div class="container-fluit">
         <div class="slide-bar">
-            <div class="search">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                </form>
-            </div>
+            
             <div class="categories">
                 <div class="list-group">
                 <a href="?controller=admin" class="list-group-item list-group-item-action ">
@@ -98,7 +94,11 @@
                         <br>
                         <input type="hidden" name="product_id" value="<?= $product['product_id'];?>">
                         <input type="file" name="product_image" id="product_image" onchange="preview()">
-                        <img id="frame" name="product_image" src="Public/image/<?= $product['product_image'];?>" width="400px" height="400px"/>
+                        <img id="frame" name="product_image" src="Public/image/<?php 
+                                                        $list_img = explode(',',$product['product_image']);
+                                                        $main_pic = $list_img[0];
+                                                        echo $main_pic;
+                                                    ?>" width="400px" height="400px"/>
                               
                     </div>
                     <div class="col-8" style="padding-left: 50px; float: right;">

@@ -10,16 +10,23 @@
         FROM  product 
         INNER JOIN categories ON product.cate_id = categories.cate_id
         INNER JOIN style ON product.style_id = style.style_id
-        INNER JOIN color ON product.color_id = color.color_id WHERE product_featured = 1 ORDER BY product_id DESC LIMIT 8";
+        INNER JOIN color ON product.color_id = color.color_id WHERE product_featured = 1 ORDER BY RAND() ASC LIMIT 8";
         $query_prd_featured = mysqli_query($connect, $sql_prd_featured);
-        $sql_prd_new = "SELECT * FROM product  ORDER BY product_id DESC LIMIT 6";
-        $query_prd_featured = mysqli_query($connect, $sql_prd_featured);
+        $sql_prd_new = "SELECT product.*, 
+        categories.*,
+        color.*,
+        style.*
+        FROM  product 
+        INNER JOIN categories ON product.cate_id = categories.cate_id
+        INNER JOIN style ON product.style_id = style.style_id
+        INNER JOIN color ON product.color_id = color.color_id ORDER BY product_id DESC LIMIT 8";
+        $query_prd_new = mysqli_query($connect, $sql_prd_new);
         
         include_once('Config/close_connect.php');
         $arr = array();
         $arr['categories'] = $query_cate;
         $arr['featured'] = $query_prd_featured;
-        $arr['new'] = $sql_prd_new;
+        $arr['new'] = $query_prd_new;
         return $arr;
     }
     switch($redirect){
