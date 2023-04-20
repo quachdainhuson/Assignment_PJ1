@@ -122,6 +122,8 @@
 
 
 #update-cart {
+	width: 170px;
+	height: 45px;
 	border-radius: 3px;
 	border: 1px solid #305eb3;
 	background: #305eb3;

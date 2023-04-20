@@ -1,4 +1,12 @@
 <?php
+function login(){
+    include_once('Config/connect.php');
+    $cate = mysqli_query($connect, "SELECT * FROM categories ORDER BY cate_id ASC");
+    include_once('Config/close_connect.php');
+    $arr = array();
+    $arr['categories'] = $cate;
+    return $arr;
+}
 function checklogin() {
     include_once('Config/connect.php');
     $user = $_POST['user_name'];
@@ -23,6 +31,7 @@ function checklogin() {
     include_once('Config/close_connect.php');
 }
 switch($action) {
+    case 'login' : $arr = login(); break;
     case 'checklogin' : $check = checklogin(); break;
 }
 ?>

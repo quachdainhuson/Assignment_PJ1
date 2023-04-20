@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ</title>
-    <link rel="shortcut icon" href="../Public/image/logo-title.png" type="image/x-icon">
+    <link rel="shortcut icon" href="Public/image/logo-title.png" type="image/x-icon">
     <link rel="stylesheet" href="Public/css/style.css">
     <link rel="stylesheet" href="Public/css/product.css">
     <link rel="stylesheet" href="Public/css/product_detail.css">
@@ -47,14 +47,13 @@
                  <input type="text" name="search" placeholder="Tìm kiếm..." id="search-bar">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
-            <a href="?controller=login&action=login"><i class="fa-regular fa-user" style="color: white;"></i></a>
+            <a href="?controller=login&redirect=login&action=login"><i class="fa-regular fa-user" style="color: white;"></i></a>
             <?php
                 if(isset($_SESSION['user_level'])){
                     echo '<a href="?controller=login&action=logout"><i class="fa-solid fa-right-from-bracket" style="color: white;"></i></a>';
                 }
             ?>
             <a href="?redirect=cart"><i class="fa-sharp fa-solid fa-cart-shopping" style="color: white;"></i></a>
-            <a href="?redirect=cart" id="price">0/0đ</a>
         </div>
     </div>
     
@@ -96,6 +95,9 @@
                     break;
                 case 'search': 
                     include_once('View/Client/search_product.php');
+                    break;
+                case 'login': 
+                    include_once('View/login_logout/login.php');
                     break;
                 
             }

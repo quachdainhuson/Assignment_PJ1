@@ -1,8 +1,4 @@
-  <script>
-        function buyNow() {
-        document.getElementById('buy-now').submit();
-    }
-    </script> 
+  
 
    
    <h4 id="title-2">GIỎ HÀNG</h4>
@@ -62,7 +58,7 @@
                     </div>
                     <div class="col-2"></div>
                     <div class="by-now col-3">
-                        <a href="#" onClick="buyNow()">
+                        <a href="#" id="submit-link" onClick="buyNow()">
                             <b>Thanh toán ngay</b>
                         </a>
                     </div>
@@ -87,7 +83,7 @@
                     <div id="customer-name" class="col-12">
                         <label>Họ tên</label>
                         <input type="text" name="customer_name" class="form-control" required>
-                    </div>
+                    </div> 
                     <div id="customer-phone" class="col-12">
                         <label>Số điện thoại</label>
                         <input type="text" name="phone_number" class="form-control" required>
@@ -189,12 +185,27 @@
   
   <?php
     }  ?>
+    <script>
+    var form = document.getElementById("buy-now");
+    var submitLink = document.getElementById("submit-link");
+
+    submitLink.addEventListener("click", function(event) {
+    event.preventDefault();
+    var name = form.elements["customer_name"].value;
+    var phone = form.elements["phone_number"].value;
+    var email = form.elements["customer_email"].value;
+    var address = form.elements["customer_address"].value;
+
+    if (name === "" || phone === "" || email === "" || address === "") {
+      alert("Please fill in all required fields.");
+      return false;
+    }
+    form.submit();
+    });
+    </script> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- FOOTER -->
     
 
 
 
-</body>
-    
-</html>

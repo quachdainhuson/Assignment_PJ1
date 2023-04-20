@@ -5,7 +5,10 @@ if(isset($_GET['action'])) {
 }
 switch($action) {
     case 'login' : 
-            include_once('View/login_logout/login.php'); break;
+            require_once('Model/login/login_model.php');
+            include_once('View/Client/index.php');
+            include_once('View/login_logout/login.php'); 
+            break;
     case 'checklogin' :
         require_once('Model/login/login_model.php');
         if($check == 1) {

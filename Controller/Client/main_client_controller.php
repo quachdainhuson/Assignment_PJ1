@@ -46,6 +46,11 @@
             require_once('View/Client/index.php');
             require_once('View/Client/search_product.php');
             break;
+        case 'search': 
+            require_once('Model/Client/search_model.php');
+            require_once('View/Client/index.php');
+            require_once('View/Client/search_product.php');
+            break;
         
     }
 ?>
