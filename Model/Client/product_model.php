@@ -6,26 +6,34 @@
         $cate = mysqli_query($connect, "SELECT * FROM categories ORDER BY cate_id ASC");
         $sql = "SELECT * FROM product WHERE product_id = '$id'";
         $query = mysqli_query($connect, $sql);
-        $sql_2 = "SELECT prd_detail.*, product.*, size.* 
+        $sql_2 = "SELECT prd_detail.*, product.*, size.*, style.*, color.* 
         FROM prd_detail 
         INNER JOIN product ON prd_detail.product_id = product.product_id
         INNER JOIN size ON prd_detail.size_id = size.size_id
+        INNER JOIN style ON product.style_id = style.style_id
+        INNER JOIN color ON product.color_id = color.color_id
         WHERE product.product_id = '$id'";
         $query_2 = mysqli_query($connect, $sql_2);
         $size = "SELECT * FROM size";
         $query_size = mysqli_query($connect, $size);
+        $sql_hot = "SELECT product.*, categories.*
+        FROM product
+                INNER JOIN categories ON product.cate_id = categories.cate_id
+                LIMIT 4" ;
+        $query_hot = mysqli_query($connect, $sql_hot);
         include_once('Config/close_connect.php');
         $arr = array();
         $arr['categories'] = $cate;
         $arr['product'] = $query;
         $arr['prd_detail'] = $query_2;
         $arr['size'] = $query_size;
+        $arr['product_hot'] = $query_hot;
         return $arr;
     }
     function cate(){
         $id = $_GET['cate_id'];
         include_once('Config/connect.php');
-        $limit = 4;
+        $limit = 8;
         $sqlTotal = "SELECT count(product_id) as total FROM product";
         $resultTotal = mysqli_query($connect, $sqlTotal);
         $total_records = mysqli_fetch_assoc($resultTotal)['total'];
@@ -130,7 +138,7 @@
     function style(){
         $style_id = $_GET['style_id'];
         include_once('Config/connect.php');
-        $limit = 4;
+        $limit = 8;
         $sqlTotal = "SELECT count(product_id) as total FROM product";
         $resultTotal = mysqli_query($connect, $sqlTotal);
         $total_records = mysqli_fetch_assoc($resultTotal)['total'];
@@ -185,7 +193,7 @@
     function color(){
         $color_id = $_GET['color_id'];
         include_once('Config/connect.php');
-        $limit = 4;
+        $limit = 8;
         $sqlTotal = "SELECT count(product_id) as total FROM product";
         $resultTotal = mysqli_query($connect, $sqlTotal);
         $total_records = mysqli_fetch_assoc($resultTotal)['total'];

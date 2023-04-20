@@ -136,12 +136,114 @@
     background-color: #f1f1f1;
   }
   #add_to_cart{
-    width: 145px;
-    height: 40px;
     display: block;
     background-color: #0A413E;
     color: white;
     margin-left: 50px;
     margin-top: 10px;
   }
+  button#add_to_cart {
+    width: 160px;
+    height: 40px;
+  }
+  .content {
+
+    overflow: hidden;
+  }
+  .zoomin img {
+    height: 50%;
+    width: 50%;
+    display: block;
+    /* -webkit-transition: all 2s ease;
+    -moz-transition: all 2s ease;
+    -ms-transition: all 2s ease; */
+    transition: all 1.2s ease;
+  }
+  .zoomin img:hover {
+      transform: scale(1.21);
+  }
+
+
+  .box{
+    background-color:rgb(255, 255, 255);
+    padding: 20px;
+    display: none;
+    margin-top: 20px;
+}
+
+ button.btninfo {
+  padding: 20px;
+  border: none;
+}
+.btninfo{
+  background-color: rgb(69, 146, 69);
+  color: white;
+  font-size: 20px;
+}
+
+.cart-item {
+	border-bottom: 1px solid #CCC;
+	cursor: pointer;
+	transition: all 0.5s ease-in-out;
+  margin-bottom: 10px;
+}
+
+
+
+
+a{
+  font-size: 20px;
+
+}
+
+
+.rating {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 150px;
+  height: 30px;
+  border-radius: 30px;
+  background: rgb(251, 247, 247);
+  display: block;
+  overflow: hidden;
+
+  
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating:not(:checked) > input {
+  display: none;
+}
+
+/* - - - - - LIKE */
+#like {
+  bottom: -65px;
+}
+#like:not(:checked) > label {
+  cursor:pointer;
+  float: right;
+  width: 30px;
+  height: 30px;
+  display: block;
+  
+  color: rgba(233, 54, 40, .4);
+  line-height: 33px;
+  text-align: center;
+}
+#like:not(:checked) > label:hover,
+#like:not(:checked) > label:hover ~ label {
+  color: rgba(233, 54, 40, .6);
+}
+#like > input:checked + label:hover,
+#like > input:checked + label:hover ~ label,
+#like > input:checked ~ label:hover,
+#like > input:checked ~ label:hover ~ label,
+#like > label:hover ~ input:checked ~ label {
+  color: rgba(233, 54, 40, .8);
+}
+#like > input:checked ~ label {
+  color: rgb(233, 54, 40);
+}
   

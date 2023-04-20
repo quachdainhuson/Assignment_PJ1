@@ -109,7 +109,6 @@
                                     <th scope="col">Tên Sản Phẩm</th>
                                     <th scope="col">Giá</th>
                                     <th scope="col">Hình Ảnh</th>
-                                    <th scope="col">Trạng Thái</th>
                                     <th scope="col">Danh Mục</th>
                                     <th scope="col">Kích Cỡ</th>
                                     <th style="width: 100px;">ADD/DELETE</th>
@@ -129,7 +128,6 @@
                                                         $main_pic = $list_img[0];
                                                         echo $main_pic;
                                                     ?>" alt="" srcset=""></td>
-                                    <td><span class="label">Hết hàng</span> </td>
                                     <td><?= $item['cate_name'];?></td>
                                     <td>
                                         <?php

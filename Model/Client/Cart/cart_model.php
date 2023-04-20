@@ -39,17 +39,23 @@ function view_cart() {
     function add_cart() {
         $prd_id = $_GET['product_id'];
         $size_id = $_GET['size_id'];
-        
-        if(isset($_SESSION['cart'])){
-            if(isset($_SESSION['cart'][$prd_id][$size_id])) {
-                $_SESSION['cart'][$prd_id][$size_id]++;
+        echo $size_id;
+        if($size_id == 'null'){  
+            header('Location: index.php?redirect=product_detail&action=product_detail&product_id='. $prd_id);
+        }else{
+            if(isset($_SESSION['cart'])){
+                if(isset($_SESSION['cart'][$prd_id][$size_id])) {
+                    $_SESSION['cart'][$prd_id][$size_id]++;
+                } else {
+                    $_SESSION['cart'][$prd_id][$size_id] = 1;
+                }
             } else {
+                $_SESSION['cart'] = array();
                 $_SESSION['cart'][$prd_id][$size_id] = 1;
-            }
-        } else {
-            $_SESSION['cart'] = array();
-            $_SESSION['cart'][$prd_id][$size_id] = 1;
-        }   
+            } 
+            header('Location:index.php?redirect=cart');
+        }
+          
         
     }
     function update_cart() {

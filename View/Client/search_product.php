@@ -90,39 +90,7 @@
                     }
                 ?>
             </ul>
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <?php
-                        if($arr['current_page'] > 1 && $arr['total_pages'] > 1){
-                            $prev = $arr['current_page'] - 1;
-                            echo '<li class="page-item">
-                                    <a class="page-link" href="?redirect=product&action=product&current_page='.$prev.'">&laquo;</a>
-                                </li>';
-                        }
-
-                    ?>
-                    <?php
-                        for($i = 1; $i < $arr['total_pages']+1; $i++){
-                            if($i == $arr['current_page']){
-                                echo '<li class="page-item active "><a class="page-link" >'.$i.'</a></li>';
-
-                            }else{
-                                echo '<li class="page-item"><a class="page-link" href="?redirect=product&action=product&current_page='.$i.'">'.$i.'</a></li>';
-                            }
-                        }
-                    ?>
-                    <?php
-                                
-                        if($arr['current_page'] < $arr['total_pages'] && $arr['total_pages'] > 1){
-                            $next = $arr['current_page'] + 1;
-                            echo '<li class="page-item"><a class="page-link" href="?redirect=product&action=product&current_page='.$next.'">&raquo;</a></li>';
-                        }
-                               
-                    ?>   
-                            
-            </ul>
-  
-            </nav>          
+                      
         </div>
         <?php
             }else{       

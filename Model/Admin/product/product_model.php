@@ -19,11 +19,7 @@
         if($current_page > $total_page){
             $current_page = $total_page;
         }
-       
         $start = ($current_page - 1) * $limit;
-        
-
-        
         $sql = "SELECT product.*, 
         categories.*,
         color.*,

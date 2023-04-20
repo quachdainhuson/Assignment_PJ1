@@ -5,6 +5,8 @@
         FROM order1 
         INNER JOIN customer ON customer.customer_id = order1.customer_id
         LEFT JOIN user ON order1.user_id = user.user_id
+        ORDER BY order1.order_id
+        DESC
         "
         ;
         $query_receipt = mysqli_query($connect, $sql_receipt);

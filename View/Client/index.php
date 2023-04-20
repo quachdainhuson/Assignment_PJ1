@@ -17,46 +17,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="Public/font/fontawesome-free-6.3.0-web/css/all.min.css">
-    <style>
-        .search-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .search-form input[type="text"] {
-    width: 250px;
-    height: 30px;
-    border-radius: 5px;
-    border: none;
-    padding: 5px;
-    font-size: 16px;
-  }
-  
-  .search-form button[type="submit"] {
-    width: 40px;
-    height: 40px;
-    border-radius: 5px;
-    border: none;
-    background-color: #000000;
-    color: #fff;
-    margin-left: 10px;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-  }
-  
-  .search-form button[type="submit"]:hover {
-    background-color: #000000;
-  }
-  .search-form {
-    display: inline-block;
-  }
-  
-  .search-form input[type="text"] {
-    display: inline-block;
-    vertical-align: middle;
-  }
-    </style>
 </head>
 <body>
     <!-- HEADER -->
