@@ -117,7 +117,7 @@
               <input type="button" value="+" class="plus">
               </div> -->
               
-              <button id="add_to_cart"><a href="" style="text-decoration: none; color:white;">THÊM VÀO GIỎ</a> </button>
+            <button id="add_to_cart"><a href="" style="text-decoration: none; color:white;">THÊM VÀO GIỎ</a> </button>
               
             <p><strong>Mã SP:</strong> N/A</p>
             <p><strong>Thể Loại:</strong>Converse</p>
@@ -344,7 +344,7 @@
                   <div class="product-info">
                       <a href="#" class="product-cat"><?= $item['cate_name'];?></a>
                       <a href="#" class="product-name"><?= $item['product_name'];?></a>
-                      <div class="product-price"><?=number_format($item['product_price']),0,',',',' ;?></div>
+                      <div class="product-price"><?=number_format($item['product_price']),0,',';?>VND</div>
                   </div>
           </div>
           </li>

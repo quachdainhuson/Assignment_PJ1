@@ -104,81 +104,6 @@
                 </div>
             </form>
         </div>
-        <!-- <div class="my_order col-6">
-            <h3 id="content">ĐƠN HÀNG CỦA BẠN</h3>
-            <div class="info_order">
-                <div class="row">
-                    <div class="cart-nav-item col-8">Sản phẩm</div>
-                    <div class="cart-nav-item col-4">Giá tiền</div>
-                </div>
-
-                <div class="item_order row">
-                    <div class="order_name col-8">
-                    <h5>
-                        Converse Run Star Hike - 39 x 1
-                    </h5>
-                </div>
-                    <div class="order_price col-4">3.200.000đ</div>
-                </div>
-
-                <div class="item_order row">
-                    <div class="final_order col-8">
-                    <h4>
-                        Tạm tính
-                    </h4>
-                </div>
-                    <div class="final_order col-4">
-                        <h4>
-                            3.200.000đ
-                        </h4>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="total_order col-8">
-                    <h3>
-                        Tổng
-                    </h3>
-                </div>
-                    <div class="final_price col-4">
-                        <h3>
-                            3.200.000đ
-                        </h3>
-                    </div>
-                </div>
-                
-            </div>
-
-            
-            <div>
-                <label class="radio col-12" id="r1"><input type="radio" name="Radio" value="radio1"> Trả tiền mặt khi nhận hàng</label>
-                <div class="box" id="radio-div-1">Trả tiền mặt khi giao hàng</div>
-                <label class="radio col-12" id="r2"><input type="radio" name="Radio" value="radio2"> Chuyển khoản ngân hàng</label>
-                <div class="box" id="radio-div-2">
-                    <div>
-                        QUACH DAI NHU NAM – MB Bank (Ngân Hàng Quân Đội)
-                    </div>
-                    <div>
-                        012345678910
-                    </div>
-                    <div>
-                        Nội dung: Ghi mã đơn hàng + SĐT
-                    </div>
-                </div>
-            </div>
-            
-            <script>
-                document.getElementById("r1").onclick = function(){
-                    document.getElementById("radio-div-1").style.display="block";
-                    document.getElementById("radio-div-2").style.display="none";
-                }
-
-                document.getElementById("r2").onclick = function(){
-                    document.getElementById("radio-div-2").style.display="block";
-                    document.getElementById("radio-div-1").style.display="none";
-                }
-            </script>
-        </div> -->
     </div>
     </div>
     
@@ -197,7 +122,7 @@
     var address = form.elements["customer_address"].value;
 
     if (name === "" || phone === "" || email === "" || address === "") {
-      alert("Please fill in all required fields.");
+      alert("Xin Nhập Đầy Đủ Thông Tin Cần Thiết!!");
       return false;
     }
     form.submit();

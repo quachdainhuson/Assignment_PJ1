@@ -7,9 +7,7 @@ switch($action) {
         break;
     case 'add' : // Gọi phương thức thêm giỏ hàng
         require_once('Model/Client/Cart/cart_model.php');
-        
-        break;
-        
+        break;  
     case 'update' : // Gọi phương thức cập nhật
         require_once('Model/Client/Cart/cart_model.php');
         header('Location:index.php?redirect=cart');
